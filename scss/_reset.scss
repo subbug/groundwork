@@ -1,0 +1,50 @@
+/* =============================================
+ *         CSS Reset by Gary Hepting 
+ *          Last Updated:2013-1-3
+ * ===========================================*/
+
+
+
+
+/* ====================
+ *   optimized reset
+ * ==================*/
+ *, *:after, *:before {
+  // the better box model
+  -ms-box-sizing:border-box; // IE 10+
+  -o-box-sizing:border-box; // Opera
+  -moz-box-sizing:border-box; // Firefox
+  -webkit-box-sizing:border-box; // Webkit (Safari, Chrome, etc)
+  box-sizing:border-box;
+}
+
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, p, 
+ol, ul, li, dl, dt, dd, 
+a, img, blockquote, cite, 
+em, small, strong, b, u, i, time, address, center, 
+form, fieldset, legend, label, input, textarea, select, button, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+header, footer, aside, menu, nav, section, article, details, 
+pre, code, iframe, object, canvas, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  // antialiasing in webkit
+  -webkit-font-smoothing:antialiased;
+  // disable text size adjustments (primarily iOS devices)
+  -webkit-text-size-adjust:none;
+}
+
+
+
+
+/* ====================
+ *  HTML5 display reset for legacy browsers
+ * ==================*/
+header, footer, aside, menu, nav, section, article, details {
+  display: block;
+}

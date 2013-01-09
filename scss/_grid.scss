@@ -1,0 +1,405 @@
+/* =============================================
+ *    Fractional grid system by Gary Hepting
+ *          Last Updated:2013-1-3
+ * ===========================================*/
+
+
+
+
+/* ====================
+ *     grid system
+ * ==================*/
+.container          { max-width:$max-width;margin:0 auto; }
+.row                { width:$twelve-columns;
+  &:after           { content:'';display:block;clear:both; } // clearfix
+}
+.column, .columns   { float:left;position:relative; }
+.one                { width:$one-column; }
+.two                { width:$two-columns; }
+.three              { width:$three-columns; }
+.four               { width:$four-columns; }
+.five               { width:$five-columns; }
+.six                { width:$six-columns; }
+.seven              { width:$seven-columns; }
+.eight              { width:$eight-columns; }
+.nine               { width:$nine-columns; }
+.ten                { width:$ten-columns; }
+.eleven             { width:$eleven-columns; }
+.twelve             { width:$twelve-columns; }
+
+// push (source ordering)
+.push-one           { left:$one-column; }
+.push-two           { left:$two-columns; }
+.push-three         { left:$three-columns; }
+.push-four          { left:$four-columns; }
+.push-five          { left:$five-columns; }
+.push-six           { left:$six-columns; }
+.push-seven         { left:$seven-columns; }
+.push-eight         { left:$eight-columns; }
+.push-nine          { left:$nine-columns; }
+.push-ten           { left:$ten-columns; }
+.push-eleven        { left:$eleven-columns; }
+.push-twelve        { left:$twelve-columns; }
+
+// pull (source ordering)
+.pull-one           { right:$one-column; }
+.pull-two           { right:$two-columns; }
+.pull-three         { right:$three-columns; }
+.pull-four          { right:$four-columns; }
+.pull-five          { right:$five-columns; }
+.pull-six           { right:$six-columns; }
+.pull-seven         { right:$seven-columns; }
+.pull-eight         { right:$eight-columns; }
+.pull-nine          { right:$nine-columns; }
+.pull-ten           { right:$ten-columns; }
+.pull-eleven        { right:$eleven-columns; }
+.pull-twelve        { right:$twelve-columns; }
+
+// offset
+.offset-by-one      { margin-left:$one-column; }
+.offset-by-two      { margin-left:$two-columns; }
+.offset-by-three    { margin-left:$three-columns; }
+.offset-by-four     { margin-left:$four-columns; }
+.offset-by-five     { margin-left:$five-columns; }
+.offset-by-six      { margin-left:$six-columns; }
+.offset-by-seven    { margin-left:$seven-columns; }
+.offset-by-eight    { margin-left:$eight-columns; }
+.offset-by-nine     { margin-left:$nine-columns; }
+.offset-by-ten      { margin-left:$ten-columns; }
+.offset-by-eleven   { margin-left:$eleven-columns; }
+.offset-by-twelve   { margin-left:$twelve-columns; }
+
+// helpers
+.centered           { float:none;margin:0 auto; }
+.padded             { padding:0 $gutter; } // overrides layout helper
+
+
+
+
+/* ====================
+ *      fractions
+ * ==================*/
+// wholes
+.whole,
+.wholes             { @extend .column;
+  &.one             { width:$one-whole; }
+}
+
+// halves
+.half,
+.halves             { @extend .column;
+  &.one             { width:$one-half; }
+  // helpers
+  &.push-one           { left:$one-half; }
+  &.pull-one           { right:$one-half; }
+  &.offset-by-one      { margin-left:$one-half; }
+}
+
+// thirds
+.third, 
+.thirds             { @extend .column;
+  &.one             { width:$one-third; }
+  &.two             { width:$two-thirds; }
+  &.three           { width:$three-thirds; }
+  // helpers
+  &.push-one           { left:$one-third; }
+  &.push-two           { left:$two-thirds; }
+  &.pull-one           { right:$one-third; }
+  &.pull-two           { right:$two-thirds; }
+  &.offset-by-one      { margin-left:$one-third; }
+  &.offset-by-two      { margin-left:$two-thirds; }
+}
+
+// fourths
+.fourth, 
+.fourths            { @extend .column;
+  &.one              { width:$one-fourth; }
+  &.two              { width:$two-fourths; }
+  &.three            { width:$three-fourths; }
+  &.four             { width:$four-fourths; }
+  // helpers
+  &.push-one           { left:$one-fourth; }
+  &.push-two           { left:$one-half; }
+  &.push-three         { left:$three-fourths; }
+  &.pull-one           { right:$one-fourth; }
+  &.pull-two           { right:$one-half; }
+  &.pull-three         { right:$three-fourths; }
+  &.offset-by-one      { margin-left:$one-fourth; }
+  &.offset-by-two      { margin-left:$one-half; }
+  &.offset-by-three    { margin-left:$three-fourths; }
+}
+
+// fifths
+.fifth, 
+.fifths             { @extend .column;
+  &.one              { width:$one-fifth; }
+  &.two              { width:$two-fifths; }
+  &.three            { width:$three-fifths; }
+  &.four             { width:$four-fifths; }
+  &.five             { width:$five-fifths; }
+  // helpers
+  &.push-one           { left:$one-fifth; }
+  &.push-two           { left:$two-fifths; }
+  &.push-three         { left:$three-fifths; }
+  &.push-four          { left:$four-fifths; }
+  &.pull-one           { right:$one-fifth; }
+  &.pull-two           { right:$two-fifths; }
+  &.pull-three         { right:$three-fifths; }
+  &.pull-four          { right:$four-fifths; }
+  &.offset-by-one      { margin-left:$one-fifth; }
+  &.offset-by-two      { margin-left:$two-fifths; }
+  &.offset-by-three    { margin-left:$three-fifths; }
+  &.offset-by-four     { margin-left:$four-fifths; }
+  // helpers
+  &.push-one           { left:$one-fifth; }
+  &.push-two           { left:$two-fifths; }
+  &.push-three         { left:$three-fifths; }
+  &.push-four          { left:$four-fifths; }
+  &.pull-one           { right:$one-fifth; }
+  &.pull-two           { right:$two-fifths; }
+  &.pull-three         { right:$three-fifths; }
+  &.pull-four          { right:$four-fifths; }
+  &.offset-by-one      { margin-left:$one-fifth; }
+  &.offset-by-two      { margin-left:$two-fifths; }
+  &.offset-by-three    { margin-left:$three-fifths; }
+  &.offset-by-four     { margin-left:$four-fifths; }
+}
+
+// sixths
+.sixth, 
+.sixths             { @extend .column;
+  &.one              { width:$one-sixth; }
+  &.two              { width:$two-sixths; }
+  &.three            { width:$three-sixths; }
+  &.four             { width:$four-sixths; }
+  &.five             { width:$five-sixths; }
+  &.six              { width:$six-sixths; }
+  // helpers
+  &.push-one           { left:$one-sixth; }
+  &.push-two           { left:$two-sixths; }
+  &.push-three         { left:$three-sixths; }
+  &.push-four          { left:$four-sixths; }
+  &.push-five          { left:$five-sixths; }
+  &.pull-one           { right:$one-sixth; }
+  &.pull-two           { right:$two-sixths; }
+  &.pull-three         { right:$three-sixths; }
+  &.pull-four          { right:$four-sixths; }
+  &.pull-five          { right:$five-sixths; }
+  &.offset-by-one      { margin-left:$one-sixth; }
+  &.offset-by-two      { margin-left:$two-sixths; }
+  &.offset-by-three    { margin-left:$three-sixths; }
+  &.offset-by-four     { margin-left:$four-sixths; }
+  &.offset-by-five     { margin-left:$five-sixths; }
+}
+
+// sevenths
+.seventh, 
+.sevenths           { @extend .column;
+  &.one              { width:$one-seventh; }
+  &.two              { width:$two-sevenths; }
+  &.three            { width:$three-sevenths; }
+  &.four             { width:$four-sevenths; }
+  &.five             { width:$five-sevenths; }
+  &.six              { width:$six-sevenths; }
+  &.seven            { width:$seven-sevenths; }
+  // helpers
+  &.push-one           { left:$one-seventh; }
+  &.push-two           { left:$two-sevenths; }
+  &.push-three         { left:$three-sevenths; }
+  &.push-four          { left:$four-sevenths; }
+  &.push-five          { left:$five-sevenths; }
+  &.push-six           { left:$six-sevenths; }
+  &.pull-one           { right:$one-seventh; }
+  &.pull-two           { right:$two-sevenths; }
+  &.pull-three         { right:$three-sevenths; }
+  &.pull-four          { right:$four-sevenths; }
+  &.pull-five          { right:$five-sevenths; }
+  &.pull-six           { right:$six-sevenths; }
+  &.offset-by-one      { margin-left:$one-seventh; }
+  &.offset-by-two      { margin-left:$two-sevenths; }
+  &.offset-by-three    { margin-left:$three-sevenths; }
+  &.offset-by-four     { margin-left:$four-sevenths; }
+  &.offset-by-five     { margin-left:$five-sevenths; }
+  &.offset-by-six      { margin-left:$six-sevenths; }
+}
+
+// eighths
+.eighth, 
+.eighths            { @extend .column;
+  &.one              { width:$one-eighth; }
+  &.two              { width:$two-eighths; }
+  &.three            { width:$three-eighths; }
+  &.four             { width:$four-eighths; }
+  &.five             { width:$five-eighths; }
+  &.six              { width:$six-eighths; }
+  &.seven            { width:$seven-eighths; }
+  &.eight            { width:$eight-eighths; }
+  // helpers
+  &.push-one           { left:$one-eighth; }
+  &.push-two           { left:$two-eighths; }
+  &.push-three         { left:$three-eighths; }
+  &.push-four          { left:$four-eighths; }
+  &.push-five          { left:$five-eighths; }
+  &.push-six           { left:$six-eighths; }
+  &.push-seven         { left:$seven-eighths; }
+  &.pull-one           { right:$one-eighth; }
+  &.pull-two           { right:$two-eighths; }
+  &.pull-three         { right:$three-eighths; }
+  &.pull-four          { right:$four-eighths; }
+  &.pull-five          { right:$five-eighths; }
+  &.pull-six           { right:$six-eighths; }
+  &.pull-seven         { right:$seven-eighths; }
+  &.offset-by-one      { margin-left:$one-eighth; }
+  &.offset-by-two      { margin-left:$two-eighths; }
+  &.offset-by-three    { margin-left:$three-eighths; }
+  &.offset-by-four     { margin-left:$four-eighths; }
+  &.offset-by-five     { margin-left:$five-eighths; }
+  &.offset-by-six      { margin-left:$six-eighths; }
+  &.offset-by-seven    { margin-left:$seven-eighths; }
+}
+
+// ninths
+.ninth, 
+.ninths             { @extend .column;
+  &.one              { width:$one-ninth; }
+  &.two              { width:$two-ninths; }
+  &.three            { width:$three-ninths; }
+  &.four             { width:$four-ninths; }
+  &.five             { width:$five-ninths; }
+  &.six              { width:$six-ninths; }
+  &.seven            { width:$seven-ninths; }
+  &.eight            { width:$eight-ninths; }
+  &.nine             { width:$nine-ninths; }
+  // helpers
+  &.push-one           { left:$one-ninth; }
+  &.push-two           { left:$two-ninths; }
+  &.push-three         { left:$three-ninths; }
+  &.push-four          { left:$four-ninths; }
+  &.push-five          { left:$five-ninths; }
+  &.push-six           { left:$six-ninths; }
+  &.push-seven         { left:$seven-ninths; }
+  &.push-eight         { left:$eight-ninths; }
+  &.pull-one           { right:$one-ninth; }
+  &.pull-two           { right:$two-ninths; }
+  &.pull-three         { right:$three-ninths; }
+  &.pull-four          { right:$four-ninths; }
+  &.pull-five          { right:$five-ninths; }
+  &.pull-six           { right:$six-ninths; }
+  &.pull-seven         { right:$seven-ninths; }
+  &.pull-eight         { right:$eight-ninths; }
+  &.offset-by-one      { margin-left:$one-ninth; }
+  &.offset-by-two      { margin-left:$two-ninths; }
+  &.offset-by-three    { margin-left:$three-ninths; }
+  &.offset-by-four     { margin-left:$four-ninths; }
+  &.offset-by-five     { margin-left:$five-ninths; }
+  &.offset-by-six      { margin-left:$six-ninths; }
+  &.offset-by-seven    { margin-left:$seven-ninths; }
+  &.offset-by-eight    { margin-left:$eight-ninths; }
+}
+
+// tenths
+.tenth, 
+.tenths             { @extend .column;
+  &.one              { width:$one-tenth; }
+  &.two              { width:$two-tenths; }
+  &.three            { width:$three-tenths; }
+  &.four             { width:$four-tenths; }
+  &.five             { width:$five-tenths; }
+  &.six              { width:$six-tenths; }
+  &.seven            { width:$seven-tenths; }
+  &.eight            { width:$eight-tenths; }
+  &.nine             { width:$nine-tenths; }
+  &.ten              { width:$ten-tenths; }
+  // helpers
+  &.push-one           { left:$one-tenth; }
+  &.push-two           { left:$two-tenths; }
+  &.push-three         { left:$three-tenths; }
+  &.push-four          { left:$four-tenths; }
+  &.push-five          { left:$five-tenths; }
+  &.push-six           { left:$six-tenths; }
+  &.push-seven         { left:$seven-tenths; }
+  &.push-eight         { left:$eight-tenths; }
+  &.push-nine          { left:$nine-tenths; }
+  &.pull-one           { right:$one-tenth; }
+  &.pull-two           { right:$two-tenths; }
+  &.pull-three         { right:$three-tenths; }
+  &.pull-four          { right:$four-tenths; }
+  &.pull-five          { right:$five-tenths; }
+  &.pull-six           { right:$six-tenths; }
+  &.pull-seven         { right:$seven-tenths; }
+  &.pull-eight         { right:$eight-tenths; }
+  &.pull-nine          { right:$nine-tenths; }
+  &.offset-by-one      { margin-left:$one-tenth; }
+  &.offset-by-two      { margin-left:$two-tenths; }
+  &.offset-by-three    { margin-left:$three-tenths; }
+  &.offset-by-four     { margin-left:$four-tenths; }
+  &.offset-by-five     { margin-left:$five-tenths; }
+  &.offset-by-six      { margin-left:$six-tenths; }
+  &.offset-by-seven    { margin-left:$seven-tenths; }
+  &.offset-by-eight    { margin-left:$eight-tenths; }
+  &.offset-by-nine     { margin-left:$nine-tenths; }
+}
+
+// elevenths
+.eleventh, 
+.elevenths          { @extend .column;
+  &.one              { width:$one-eleventh; }
+  &.two              { width:$two-elevenths; }
+  &.three            { width:$three-elevenths; }
+  &.four             { width:$four-elevenths; }
+  &.five             { width:$five-elevenths; }
+  &.six              { width:$six-elevenths; }
+  &.seven            { width:$seven-elevenths; }
+  &.eight            { width:$eight-elevenths; }
+  &.nine             { width:$nine-elevenths; }
+  &.ten              { width:$ten-elevenths; }
+  &.eleven           { width:$eleven-elevenths; }
+  // helpers
+  &.push-one           { left:$one-eleventh; }
+  &.push-two           { left:$two-elevenths; }
+  &.push-three         { left:$three-elevenths; }
+  &.push-four          { left:$four-elevenths; }
+  &.push-five          { left:$five-elevenths; }
+  &.push-six           { left:$six-elevenths; }
+  &.push-seven         { left:$seven-elevenths; }
+  &.push-eight         { left:$eight-elevenths; }
+  &.push-nine          { left:$nine-elevenths; }
+  &.push-ten           { left:$ten-elevenths; }
+  &.pull-one           { right:$one-eleventh; }
+  &.pull-two           { right:$two-elevenths; }
+  &.pull-three         { right:$three-elevenths; }
+  &.pull-four          { right:$four-elevenths; }
+  &.pull-five          { right:$five-elevenths; }
+  &.pull-six           { right:$six-elevenths; }
+  &.pull-seven         { right:$seven-elevenths; }
+  &.pull-eight         { right:$eight-elevenths; }
+  &.pull-nine          { right:$nine-elevenths; }
+  &.pull-ten           { right:$ten-elevenths; }
+  &.offset-by-one      { margin-left:$one-eleventh; }
+  &.offset-by-two      { margin-left:$two-elevenths; }
+  &.offset-by-three    { margin-left:$three-elevenths; }
+  &.offset-by-four     { margin-left:$four-elevenths; }
+  &.offset-by-five     { margin-left:$five-elevenths; }
+  &.offset-by-six      { margin-left:$six-elevenths; }
+  &.offset-by-seven    { margin-left:$seven-elevenths; }
+  &.offset-by-eight    { margin-left:$eight-elevenths; }
+  &.offset-by-nine     { margin-left:$nine-elevenths; }
+  &.offset-by-ten      { margin-left:$ten-elevenths; }
+}
+
+// twelfths
+.twelfth, 
+.twelfths           { @extend .column;
+  &.one              { width:$one-twelfth; }
+  &.two              { width:$two-twelfths; }
+  &.three            { width:$three-twelfths; }
+  &.four             { width:$four-twelfths; }
+  &.five             { width:$five-twelfths; }
+  &.six              { width:$six-twelfths; }
+  &.seven            { width:$seven-twelfths; }
+  &.eight            { width:$eight-twelfths; }
+  &.nine             { width:$nine-twelfths; }
+  &.ten              { width:$ten-twelfths; }
+  &.eleven           { width:$eleven-twelfths; }
+  &.twelve           { width:$twelve-twelfths; }
+}
