@@ -1,60 +1,9 @@
 /* ====================
  *       settings
  * ==================*/
-$max-width:         1060px; // max container width
-$gutter:            10px;   // gutter spacing
+$max-width:         1200px; // max container width (i.e. - 960px)
+$gutter:            10px; // gutter spacing
 
-
-
-
-/* ====================
- *       colors
- * ==================*/
-// common colors
-$white:             #ffffff;
-$black:             #000000;
-// primary colors
-$dk-blue:           #085a7a;
-$blue:              #358eb1;
-$bright-blue:       #00aad5;
-$lt-blue-1:         #33ccff;
-$lt-blue-gray:      #eef7fa;
-$lt-gray-5:         #d8edf3;
-$lt-blue:           #d4eaf3;
-$logo-blue:         #1ca6cb;
-$lt-logo-blue:      #9bd9e9;
-$logo-gray:         #4E4E4F;
-// secondary colors
-$green:             #50b135;
-$yellow:            #ffdd00;
-$orange:            #ff8800;
-$pink:              #e3436b;
-$dk-red:            #920000;
-// neutral colors
-$blackish:          #222222;
-$dk-gray:           #505050;
-$lt-gray:           #b9b9b9;
-$gray-1:            #cccccc;
-$gray-2:            #dddddd;
-$gray-4:            #ededef;
-// gradient colors
-$dk-blue-grd-1:     #0099CC;
-$dk-blue-grd-2:     #006699;
-$bright-blue-grd-1: #00b6e4;
-$bright-blue-grd-2: #0189ae;
-$blue-grd-1:        #01a5cf;
-$blue-grd-2:        #017898;
-$lt-blue-grd-1:     $lt-blue-gray;
-$lt-blue-grd-2:     $lt-blue;
-$orange-grd-1:      #f88e11;
-$orange-grd-2:      #f06015;
-$yellow-grd-1:      #fffbed;
-$yellow-grd-2:      #ffd326;
-$lt-gray-grd-1:     $white;
-$lt-gray-grd-2:     $gray-1;
-// special keyline colors
-$ltr-gray:          #e6e6e6;
-$ltr-gray-2:        #e6e6e8;
 
 
 

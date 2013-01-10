@@ -1,6 +1,6 @@
-groundwork
+Groundwork
 ==========
 
-Groundwork is a robust and VERY flexible responsive, fractional grid system to help you make virtually any layout kick ass
+Groundwork is a responsive, fractions-based, fluid grid system. Use Groundwork to rapidly build fluid, responsive layouts and make virtually any layout kick ass on virtually any device.
 
 Visit http://garyhepting.com/groundwork/

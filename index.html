@@ -6,31 +6,18 @@
   
   <!-- demo stuff -->
   <link href='http://fonts.googleapis.com/css?family=Six+Caps|Average+Sans' rel='stylesheet' type='text/css'>
-  <style type="text/css">
-    body {margin:0;padding:20px;font-family:'Average Sans',sans-serif;font-size:16px;font-weight:normal;line-height:1.5;background:#589283;color:#fff;text-shadow:2px 2px 2px #3F6558;}
-    a, a:link, a:visited {color:#fff;text-decoration: none;border-bottom:1px dashed #3F6558;-webkit-transition:border-color 0.3s ease-in;}
-    a:hover, a:focus {border-bottom:1px dashed #fff;}
-    h1, h2, h3 {text-align:center;line-height:1.2;}
-    .heading {margin-top:0.25em;font-family:'Six Caps',sans-serif;text-shadow:0.05em 0.05em 2px #3F6558;}
-    .subheading, .sectionheading {text-align:right;font-weight:normal;font-family:'Six Caps',sans-serif;}
-    .sectionheading {text-align:left;}
-    legend {font-size:2em;font-family:'Six Caps',sans-serif;text-shadow:0.1em 0.1em 2px #3F6558;}
-    fieldset {box-sizing:border-box;width:48%;float:left;border-radius:20px;border:1px solid #3F6558;margin:1%;background:#3F6558;padding:15px 30px 25px;}
-    textarea {font-size:16px;color:#d9d9d9;box-sizing:border-box;width:100%;background:#589283;border:none;padding:2em;overflow:hidden;}
-    textarea:focus {color:#fff;outline:5px solid #839E9A;overflow:auto;}
-    textarea::selection {background: #589283;color:#fff;}
-    textarea::-moz-selection {background: #589283;color:#fff;}
-  </style>
+  <link type="text/css" rel="stylesheet" href="./css/demo.css" />
 </head>
 <body>
   
   <div class="container">
   
   <h1 class="heading">Groundwork</h1>
-  <h2 class="subheading">A Responsive, Fractional Grid System</h2>
+  <h2 class="subheading" style="font-size: 36px;">Groundwork is a responsive, fractions-based, fluid CSS grid system. Use Groundwork to rapidly build fluid, responsive layouts and make virtually any layout kick ass on virtually any device.</h2>
+  <h3 class="button"><a href="https://github.com/ghepting/groundwork">Download on Github <span class="download"></span></a></h3>
   
   <h6 class="sectionheading">Responsive Grid System</h6>
-  <h4>Create scalable, responsive &amp; device-agnostic layouts quickly and easily with this nestable, responsive grid system. The grid, by default, boasts a flexible 12-column scaffolding structure for maximum flexibility, but supports any variance of fractions from halves to twelfths.</h4>
+  <h4>Create scalable, responsive &amp; device-agnostic layouts quickly and easily with this nestable, responsive CSS grid system. The grid, by default, boasts a flexible 12-column scaffolding structure for maximum flexibility, but supports any variance of fractions from halves to twelfths.</h4>
 
   <hr/>
 
@@ -527,6 +514,9 @@
     </div>
   </div>
   <br/>
+  <br/>
+
+  <p>Another open-source project by <a href="http://garyhepting.com/">Gary Hepting</a></p>
 
   <!-- demo stuff -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
@@ -549,66 +539,85 @@
         minSize: 30,
         maxSize: 50
       });
+      // add text and classes to data attributes
       $('.demo > .row > .column, \
-       .demo > .row > .columns,\
-       .demo > .row > .whole, \
-       .demo > .row > .wholes, \
-       .demo > .row > .half, \
-       .demo > .row > .halves, \
-       .demo > .row > .third, \
-       .demo > .row > .thirds, \
-       .demo > .row > .fourth, \
-       .demo > .row > .fourths, \
-       .demo > .row > .fifth, \
-       .demo > .row > .fifths, \
-       .demo > .row > .sixth, \
-       .demo > .row > .sixths, \
-       .demo > .row > .seventh,\
-       .demo > .row > .sevenths, \
-       .demo > .row > .eighth, \
-       .demo > .row > .eighths, \
-       .demo > .row > .ninth,  \
-       .demo > .row > .ninths,  \
-       .demo > .row > .tenth, \
-       .demo > .row > .tenths, \
-       .demo > .row > .eleventh,\
-       .demo > .row > .elevenths, \
-       .demo > .row > .twelfth,\
-       .demo > .row > .twelfths').each(function() {
+        .demo > .row > .columns, \
+        .demo > .row > .whole, \
+        .demo > .row > .wholes, \
+        .demo > .row > .half, \
+        .demo > .row > .halves, \
+        .demo > .row > .third, \
+        .demo > .row > .thirds, \
+        .demo > .row > .fourth, \
+        .demo > .row > .fourths, \
+        .demo > .row > .fifth, \
+        .demo > .row > .fifths, \
+        .demo > .row > .sixth, \
+        .demo > .row > .sixths, \
+        .demo > .row > .seventh, \
+        .demo > .row > .sevenths, \
+        .demo > .row > .eighth, \
+        .demo > .row > .eighths, \
+        .demo > .row > .ninth, \
+        .demo > .row > .ninths, \
+        .demo > .row > .tenth, \
+        .demo > .row > .tenths, \
+        .demo > .row > .eleventh, \
+        .demo > .row > .elevenths, \
+        .demo > .row > .twelfth, \
+        .demo > .row > .twelfths')
+      .each(function() {
         $(this).attr('data-title', $(this).attr('class'));
         return $(this).attr('data-text', $(this).text());
       });
+      // toggle classes as text on hover
       $('.demo > .row > .column, \
-       .demo > .row > .columns,\
-       .demo > .row > .whole, \
-       .demo > .row > .wholes, \
-       .demo > .row > .half, \
-       .demo > .row > .halves, \
-       .demo > .row > .third, \
-       .demo > .row > .thirds, \
-       .demo > .row > .fourth, \
-       .demo > .row > .fourths, \
-       .demo > .row > .fifth, \
-       .demo > .row > .fifths, \
-       .demo > .row > .sixth, \
-       .demo > .row > .sixths, \
-       .demo > .row > .seventh,\
-       .demo > .row > .sevenths, \
-       .demo > .row > .eighth, \
-       .demo > .row > .eighths, \
-       .demo > .row > .ninth,  \
-       .demo > .row > .ninths,  \
-       .demo > .row > .tenth, \
-       .demo > .row > .tenths, \
-       .demo > .row > .eleventh,\
-       .demo > .row > .elevenths, \
-       .demo > .row > .twelfth,\
-       .demo > .row > .twelfths').hover((function() {
+        .demo > .row > .columns, \
+        .demo > .row > .whole, \
+        .demo > .row > .wholes, \
+        .demo > .row > .half, \
+        .demo > .row > .halves, \
+        .demo > .row > .third, \
+        .demo > .row > .thirds, \
+        .demo > .row > .fourth, \
+        .demo > .row > .fourths, \
+        .demo > .row > .fifth, \
+        .demo > .row > .fifths, \
+        .demo > .row > .sixth, \
+        .demo > .row > .sixths, \
+        .demo > .row > .seventh, \
+        .demo > .row > .sevenths, \
+        .demo > .row > .eighth, \
+        .demo > .row > .eighths, \
+        .demo > .row > .ninth, \
+        .demo > .row > .ninths, \
+        .demo > .row > .tenth, \
+        .demo > .row > .tenths, \
+        .demo > .row > .eleventh, \
+        .demo > .row > .elevenths, \
+        .demo > .row > .twelfth, \
+        .demo > .row > .twelfths')
+      .hover((function() {
         return $(this).text($(this).attr("data-title"));
       }), function() {
         return $(this).text($(this).attr("data-text"));
       });
     });
+  </script>
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17121602-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
   </script>
 
 </body>
