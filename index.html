@@ -25,6 +25,65 @@
         minSize: 30,
         maxSize: 50
       });
+      $('.demo > .row > .column, \
+       .demo > .row > .columns,\
+       .demo > .row > .whole, \
+       .demo > .row > .wholes, \
+       .demo > .row > .half, \
+       .demo > .row > .halves, \
+       .demo > .row > .third, \
+       .demo > .row > .thirds, \
+       .demo > .row > .fourth, \
+       .demo > .row > .fourths, \
+       .demo > .row > .fifth, \
+       .demo > .row > .fifths, \
+       .demo > .row > .sixth, \
+       .demo > .row > .sixths, \
+       .demo > .row > .seventh,\
+       .demo > .row > .sevenths, \
+       .demo > .row > .eighth, \
+       .demo > .row > .eighths, \
+       .demo > .row > .ninth,  \
+       .demo > .row > .ninths,  \
+       .demo > .row > .tenth, \
+       .demo > .row > .tenths, \
+       .demo > .row > .eleventh,\
+       .demo > .row > .elevenths, \
+       .demo > .row > .twelfth,\
+       .demo > .row > .twelfths').each(function() {
+        $(this).attr('data-title', $(this).attr('class'));
+        return $(this).attr('data-text', $(this).text());
+      });
+      $('.demo > .row > .column, \
+       .demo > .row > .columns,\
+       .demo > .row > .whole, \
+       .demo > .row > .wholes, \
+       .demo > .row > .half, \
+       .demo > .row > .halves, \
+       .demo > .row > .third, \
+       .demo > .row > .thirds, \
+       .demo > .row > .fourth, \
+       .demo > .row > .fourths, \
+       .demo > .row > .fifth, \
+       .demo > .row > .fifths, \
+       .demo > .row > .sixth, \
+       .demo > .row > .sixths, \
+       .demo > .row > .seventh,\
+       .demo > .row > .sevenths, \
+       .demo > .row > .eighth, \
+       .demo > .row > .eighths, \
+       .demo > .row > .ninth,  \
+       .demo > .row > .ninths,  \
+       .demo > .row > .tenth, \
+       .demo > .row > .tenths, \
+       .demo > .row > .eleventh,\
+       .demo > .row > .elevenths, \
+       .demo > .row > .twelfth,\
+       .demo > .row > .twelfths').hover((function() {
+        return $(this).text($(this).attr("data-title"));
+      }), function() {
+        return $(this).text($(this).attr("data-text"));
+      });
     });
   </script>
   <link href='http://fonts.googleapis.com/css?family=Six+Caps|Average+Sans' rel='stylesheet' type='text/css'>
@@ -51,11 +110,11 @@
   <h2 class="subheading">A Responsive, Fractional Grid System</h2>
   
   <h6 class="sectionheading">Responsive Grid System</h6>
-  <p class="lead">Create scalable, responsive &amp; device-agnostic layouts quickly and easily with this nestable, responsive grid system. The grid, by default, boasts a flexible 12-column scaffolding structure for maximum flexibility, but supports any variance of fractions from halves to twelfths.</p>
+  <h4>Create scalable, responsive &amp; device-agnostic layouts quickly and easily with this nestable, responsive grid system. The grid, by default, boasts a flexible 12-column scaffolding structure for maximum flexibility, but supports any variance of fractions from halves to twelfths.</h4>
 
   <hr/>
 
-  <h6 class="small sectionheading">12 Columns</h6>
+  <h6 class="small sectionheading">12 Columns <span style="float:right;">(Default)</span></h6>
   <p>Columns collapse into seperate rows when viewport width is below 768 pixels</p>
   <div id="griddemo" class="demo">
     <div class="row">
@@ -73,7 +132,7 @@
     </div>
     <div class="row">
       <div class="eleven columns">11</div>
-      <div class="one columns">1</div>
+      <div class="one column">1</div>
     </div>
     <div class="row">
       <div class="ten columns">10</div>
@@ -112,7 +171,7 @@
       <div class="ten columns">10</div>
     </div>
     <div class="row">
-      <div class="one columns">1</div>
+      <div class="one column">1</div>
       <div class="eleven columns">11</div>
     </div>
     
@@ -305,7 +364,7 @@
 
   <hr/>
 
-  <h6 class="sectionheading">Centered Columns</h6>
+  <h6 class="sectionheading">Centering</h6>
   <div id="centereddemo" class="demo">
     <div class="row">
       <div class="one centered column">1</div>
@@ -353,7 +412,7 @@
 
   <hr/>
 
-  <h6 class="sectionheading">Offset Columns</h6>
+  <h6 class="sectionheading">Offsetting</h6>
   <div id="offsetdemo" class="demo">
     <div class="row">
       <div class="eleven columns offset-by-one">11</div>
@@ -444,7 +503,7 @@
 
   <hr/>
 
-  <h6 class="small sectionheading">3 or 4 Column Grids for Small Tablets</h6>
+  <h6 class="small sectionheading">Small Tablets Grid</h6>
   <p>Columns don't collapse into seperate rows until viewport width falls below 480 pixels</p>
   <div id="tabletgriddemo" class="demo">
     <div class="row">
@@ -497,7 +556,7 @@
 
   <hr/>
 
-  <h6 class="small sectionheading">3 or 4 Column Grids for Mobile</h6>
+  <h6 class="small sectionheading">Mobile Grid</h6>
   <p>Columns maintain structure down through mobile viewport sizes</p>
   <div id="mobilegriddemo" class="demo">
     <div class="row">
