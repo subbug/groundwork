@@ -1,46 +1,43 @@
 <!doctype html>
 <html>
 <head>
-  <title>Gridmatic</title>
+  <title>Groundwork CSS - A Responsive, Fractional Grid System</title>
+  <link type="text/css" rel="stylesheet" href="./css/groundwork.css" />
+  
+  <!-- demo stuff -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-  <script>window.jQuery || document.write('<script src="../responsiveText/jquery-1.8.2.min.js" type="text/javascript"><\/script>')</script>
-  <script type="text/javascript" src="../responsiveText/jquery.responsiveText.js"></script>
+  <script>window.jQuery || document.write('<script src="./js/jquery-1.8.2.min.js" type="text/javascript"><\/script>')</script>
+  <script type="text/javascript" src="./js/jquery.responsiveText.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('.heading').responsiveText({
-        agressiveness: 8
+        agressiveness: 3,
+        minSize: 40,
+        maxSize: 300
       });
-      $('.subheading').responsiveText({
-        agressiveness: 25,
-        minSize: 14,
-        maxSize: 40
+      $('.subheading, .sectionheading').responsiveText({
+        agressiveness: 10,
+        minSize: 25,
+        maxSize: 45
       });
       $('.button').responsiveText({
         agressiveness: 25,
         minSize: 30,
         maxSize: 50
       });
-      $('textarea').focus(function(e) {
-        var $this = $(this);
-        $this.select();
-        $this.mouseup(function() {
-          $this.unbind("mouseup");
-          return false;
-        });
-      });
     });
   </script>
-  <link type="text/css" rel="stylesheet" href="./css/gridmatic.css" />
-  <link href='http://fonts.googleapis.com/css?family=Pacifico|Average+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Six+Caps|Average+Sans' rel='stylesheet' type='text/css'>
   <style type="text/css">
-    body {margin:0; padding:20px; font-family: 'Average Sans', sans-serif; font-size:16px; font-weight:normal; line-height:1.5; background:#589283; color:#fff; text-shadow:2px 2px 2px #3F6558;}
+    body {margin:0;padding:20px;font-family:'Average Sans',sans-serif;font-size:16px;font-weight:normal;line-height:1.5;background:#589283;color:#fff;text-shadow:2px 2px 2px #3F6558;}
     a, a:link, a:visited {color:#fff;text-decoration: none;border-bottom:1px dashed #3F6558;-webkit-transition:border-color 0.3s ease-in;}
     a:hover, a:focus {border-bottom:1px dashed #fff;}
-    h1, h2, h3 {text-align:center; line-height:1.2;}
-    .heading {margin-top:0.25em;font-family:'Pacifico', sans-serif; text-shadow:0.1em 0.1em 2px #3F6558;}
-    .subheading {font-weight:normal;}
-    legend {font-size:2em;font-family:'Pacifico', sans-serif; text-shadow:0.1em 0.1em 2px #3F6558;}
-    fieldset {box-sizing:border-box;width:48%;float:left;border-radius:20px; border:1px solid #3F6558; margin:1%;background:#3F6558;padding:15px 30px 25px;}
+    h1, h2, h3 {text-align:center;line-height:1.2;}
+    .heading {margin-top:0.25em;font-family:'Six Caps',sans-serif;text-shadow:0.05em 0.05em 2px #3F6558;}
+    .subheading, .sectionheading {text-align:right;font-weight:normal;font-family:'Six Caps',sans-serif;}
+    .sectionheading {text-align:left;}
+    legend {font-size:2em;font-family:'Six Caps',sans-serif;text-shadow:0.1em 0.1em 2px #3F6558;}
+    fieldset {box-sizing:border-box;width:48%;float:left;border-radius:20px;border:1px solid #3F6558;margin:1%;background:#3F6558;padding:15px 30px 25px;}
     textarea {font-size:16px;color:#d9d9d9;box-sizing:border-box;width:100%;background:#589283;border:none;padding:2em;overflow:hidden;}
     textarea:focus {color:#fff;outline:5px solid #839E9A;overflow:auto;}
     textarea::selection {background: #589283;color:#fff;}
@@ -50,1371 +47,506 @@
 <body>
   <div class="container">
   
-  <h1 class="heading">Gridmatic</h1>
+  <h1 class="heading">Groundwork</h1>
+  <h2 class="subheading">A Responsive, Fractional Grid System</h2>
   
-      <h6>Responsive Grid System</h6>
-      <p class="lead">Create scalable, responsive &amp; device-agnostic layouts quickly and easily with this nestable, responsive grid system. The grid, by default, boasts a flexible 12-column scaffolding structure for maximum flexibility, but supports any variance of fractions from halves to twelfths.</p>
-      <h4 class="pull-right zero">
-        <a href="#grid" class="view-code">
-          <i class="icon-chevron-left"></i>
-          <i class="icon-chevron-right"></i>
-        </a>
-      </h4>
-      <h6 class="small">12 Columns<br/>
-        <small>(columns collapse into seperate rows below 768px)</small></h6>
-      <div id="griddemo" class="demo">
-        <div class="row">
-          <div class="four columns">4</div>
-          <div class="four columns">4</div>
-          <div class="four columns">4</div>
-        </div>
-        <div class="row">
-          <div class="three columns">3</div>
-          <div class="six columns">6</div>
-          <div class="three columns">3</div>
-        </div>
-        <div class="row">
-          <div class="twelve columns">12</div>
-        </div>
-        <div class="row">
-          <div class="eleven columns">11</div>
-          <div class="one columns">1</div>
-        </div>
-        <div class="row">
-          <div class="ten columns">10</div>
-          <div class="two columns">2</div>
-        </div>
-        <div class="row">
-          <div class="nine columns">9</div>
-          <div class="three columns">3</div>
-        </div>
-        <div class="row">
-          <div class="eight columns">8</div>
-          <div class="four columns">4</div>
-        </div>
-        <div class="row">
-          <div class="seven columns">7</div>
-          <div class="five columns">5</div>
-        </div>
-        <div class="row">
-          <div class="six columns">6</div>
-          <div class="six columns">6</div>
-        </div>
-        <div class="row">
-          <div class="five columns">5</div>
-          <div class="seven columns">7</div>
-        </div>
-        <div class="row">
-          <div class="four columns">4</div>
-          <div class="eight columns">8</div>
-        </div>
-        <div class="row">
-          <div class="three columns">3</div>
-          <div class="nine columns">9</div>
-        </div>
-        <div class="row">
-          <div class="two columns">2</div>
-          <div class="ten columns">10</div>
-        </div>
-        <div class="row">
-          <div class="one columns">1</div>
-          <div class="eleven columns">11</div>
-        </div>
-        
-        <h6 class="small">Halves</h6>
-        <div class="row">
-          <div class="one half">1/2</div>
-          <div class="one half">1/2</div>
-        </div>
-        
-        <h6 class="small">Thirds</h6>
-        <div class="row">
-          <div class="one third">1/3</div>
-          <div class="one third">1/3</div>
-          <div class="one third">1/3</div>
-        </div>
-        <div class="row">
-          <div class="two thirds">2/3</div>
-          <div class="one third">1/3</div>
-        </div>
-        
-        <h6 class="small">Fourths</h6>
-        <div class="row">
-          <div class="one fourth">1/4</div>
-          <div class="one fourth">1/4</div>
-          <div class="one fourth">1/4</div>
-          <div class="one fourth">1/4</div>
-        </div>
-        <div class="row">
-          <div class="three fourths">3/4</div>
-          <div class="one fourth">1/4</div>
-        </div>
-        <div class="row">
-          <div class="one fourth">1/4</div>
-          <div class="two fourths">2/4</div>
-          <div class="one fourth">1/4</div>
-        </div>
-        
-        <h6 class="small">Fifths</h6>
-        <div class="row">
-          <div class="one fifth">1/5</div>
-          <div class="one fifth">1/5</div>
-          <div class="one fifth">1/5</div>
-          <div class="one fifth">1/5</div>
-          <div class="one fifth">1/5</div>
-        </div>
-        <div class="row">
-          <div class="two fifths">2/5</div>
-          <div class="three fifths">3/5</div>
-        </div>
-        <div class="row">
-          <div class="one fifth">1/5</div>
-          <div class="three fifths">3/5</div>
-          <div class="one fifth">1/5</div>
-        </div>
-        <div class="row">
-          <div class="four fifths">4/5</div>
-          <div class="one fifth">1/5</div>
-        </div>
-        
-        <h6 class="small">Sixths</h6>
-        <div class="row">
-          <div class="one sixth">1/6</div>
-          <div class="one sixth">1/6</div>
-          <div class="one sixth">1/6</div>
-          <div class="one sixth">1/6</div>
-          <div class="one sixth">1/6</div>
-          <div class="one sixth">1/6</div>
-        </div>
-        <div class="row">
-          <div class="two sixths">2/6</div>
-          <div class="three sixths">3/6</div>
-          <div class="one sixth">1/6</div>
-        </div>
-        
-        <h6 class="small">Sevenths</h6>
-        <div class="row">
-          <div class="one seventh">1/7</div>
-          <div class="one seventh">1/7</div>
-          <div class="one seventh">1/7</div>
-          <div class="one seventh">1/7</div>
-          <div class="one seventh">1/7</div>
-          <div class="one seventh">1/7</div>
-          <div class="one seventh">1/7</div>
-        </div>
-        <div class="row">
-          <div class="three sevenths">3/7</div>
-          <div class="four sevenths">4/7</div>
-        </div>
-        <div class="row">
-          <div class="two sevenths">2/7</div>
-          <div class="four sevenths">4/7</div>
-          <div class="one seventh">1/7</div>
-        </div>
-        
-        <h6 class="small">Eighths</h6>
-        <div class="row">
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-          <div class="one eighth">1/8</div>
-        </div>
-        <div class="row">
-          <div class="three eighths">3/8</div>
-          <div class="five eighths">5/8</div>
-        </div>
-        <div class="row">
-          <div class="one eighth">1/8</div>
-          <div class="seven eighths">7/8</div>
-        </div>
-        
-        <h6 class="small">Ninths</h6>
-        <div class="row">
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-          <div class="one ninth">1/9</div>
-        </div>
-        <div class="row">
-          <div class="two ninths">2/9</div>
-          <div class="seven ninths">7/9</div>
-        </div>
-        
-        <h6 class="small">Tenths</h6>
-        <div class="row">
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-          <div class="one tenth">1/10</div>
-        </div>
-        <div class="row">
-          <div class="three tenths">3/10</div>
-          <div class="seven tenths">7/10</div>
-        </div>
-        
-        <h6 class="small">Elevenths</h6>
-        <div class="row">
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-          <div class="one eleventh">1/11</div>
-        </div>
-        <div class="row">
-          <div class="three elevenths">3/11</div>
-          <div class="seven elevenths">7/11</div>
-          <div class="one eleventh">1/11</div>
-        </div>
-        
-        <h6 class="small">Twelfths</h6>
-        <div class="row">
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-          <div class="one twelfth">1/12</div>
-        </div>
-        <div class="row">
-          <div class="five twelfths">5/12</div>
-          <div class="seven twelfths">7/12</div>
-        </div>
-      </div>
-      <div id="gridcode" class="code">
-        <div class="row">
-          <div class="six columns padded">
-        <code><pre class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four columns&quot;&gt;4&lt;/div&gt;
-  &lt;div class=&quot;four columns&quot;&gt;4&lt;/div&gt;
-  &lt;div class=&quot;four columns&quot;&gt;4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three columns&quot;&gt;3&lt;/div&gt;
-  &lt;div class=&quot;six columns&quot;&gt;6&lt;/div&gt;
-  &lt;div class=&quot;three columns&quot;&gt;3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;twelve columns&quot;&gt;12&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eleven columns&quot;&gt;11&lt;/div&gt;
-  &lt;div class=&quot;one columns&quot;&gt;1&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;ten columns&quot;&gt;10&lt;/div&gt;
-  &lt;div class=&quot;two columns&quot;&gt;2&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;nine columns&quot;&gt;9&lt;/div&gt;
-  &lt;div class=&quot;three columns&quot;&gt;3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eight columns&quot;&gt;8&lt;/div&gt;
-  &lt;div class=&quot;four columns&quot;&gt;4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;seven columns&quot;&gt;7&lt;/div&gt;
-  &lt;div class=&quot;five columns&quot;&gt;5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;six columns&quot;&gt;6&lt;/div&gt;
-  &lt;div class=&quot;six columns&quot;&gt;6&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;five columns&quot;&gt;5&lt;/div&gt;
-  &lt;div class=&quot;seven columns&quot;&gt;7&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four columns&quot;&gt;4&lt;/div&gt;
-  &lt;div class=&quot;eight columns&quot;&gt;8&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three columns&quot;&gt;3&lt;/div&gt;
-  &lt;div class=&quot;nine columns&quot;&gt;9&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two columns&quot;&gt;2&lt;/div&gt;
-  &lt;div class=&quot;ten columns&quot;&gt;10&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one columns&quot;&gt;1&lt;/div&gt;
-  &lt;div class=&quot;eleven columns&quot;&gt;11&lt;/div&gt;
-&lt;/div&gt;
+  <h6 class="sectionheading">Responsive Grid System</h6>
+  <p class="lead">Create scalable, responsive &amp; device-agnostic layouts quickly and easily with this nestable, responsive grid system. The grid, by default, boasts a flexible 12-column scaffolding structure for maximum flexibility, but supports any variance of fractions from halves to twelfths.</p>
 
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one half&quot;&gt;1/2&lt;/div&gt;
-  &lt;div class=&quot;one half&quot;&gt;1/2&lt;/div&gt;
-&lt;/div&gt;
+  <hr/>
 
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one third&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;one third&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;one third&quot;&gt;1/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two thirds&quot;&gt;2/3&lt;/div&gt;
-  &lt;div class=&quot;one third&quot;&gt;1/3&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three fourths&quot;&gt;3/4&lt;/div&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;two fourths&quot;&gt;2/4&lt;/div&gt;
-  &lt;div class=&quot;one fourth&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two fifths&quot;&gt;2/5&lt;/div&gt;
-  &lt;div class=&quot;three fifths&quot;&gt;3/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;three fifths&quot;&gt;3/5&lt;/div&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four fifths&quot;&gt;4/5&lt;/div&gt;
-  &lt;div class=&quot;one fifth&quot;&gt;1/5&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two sixths&quot;&gt;2/6&lt;/div&gt;
-  &lt;div class=&quot;three sixths&quot;&gt;3/6&lt;/div&gt;
-  &lt;div class=&quot;one sixth&quot;&gt;1/6&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three sevenths&quot;&gt;3/7&lt;/div&gt;
-  &lt;div class=&quot;four sevenths&quot;&gt;4/7&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two sevenths&quot;&gt;2/7&lt;/div&gt;
-  &lt;div class=&quot;four sevenths&quot;&gt;4/7&lt;/div&gt;
-  &lt;div class=&quot;one seventh&quot;&gt;1/7&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three eighths&quot;&gt;3/8&lt;/div&gt;
-  &lt;div class=&quot;five eighths&quot;&gt;5/8&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one eighth&quot;&gt;1/8&lt;/div&gt;
-  &lt;div class=&quot;seven eighths&quot;&gt;7/8&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-  &lt;div class=&quot;one ninth&quot;&gt;1/9&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two ninths&quot;&gt;2/9&lt;/div&gt;
-  &lt;div class=&quot;seven ninths&quot;&gt;7/9&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-  &lt;div class=&quot;one tenth&quot;&gt;1/10&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three tenths&quot;&gt;3/10&lt;/div&gt;
-  &lt;div class=&quot;seven tenths&quot;&gt;7/10&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three elevenths&quot;&gt;3/11&lt;/div&gt;
-  &lt;div class=&quot;seven elevenths&quot;&gt;7/11&lt;/div&gt;
-  &lt;div class=&quot;one eleventh&quot;&gt;1/11&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-  &lt;div class=&quot;one twelfth&quot;&gt;1/12&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;five twelfths&quot;&gt;5/12&lt;/div&gt;
-  &lt;div class=&quot;seven twelfths&quot;&gt;7/12&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="six columns padded">
-            <code><pre class="haml">.row
-  .four.columns 4
-  .four.columns 4
-  .four.columns 4
-.row
-  .three.columns 3
-  .six.columns 6
-  .three.columns 3
-.row
-  .twelve.columns 12
-.row
-  .eleven.columns 11
-  .one.columns 1
-.row
-  .ten.columns 10
-  .two.columns 2
-.row
-  .nine.columns 9
-  .three.columns 3
-.row
-  .eight.columns 8
-  .four.columns 4
-.row
-  .seven.columns 7
-  .five.columns 5
-.row
-  .six.columns 6
-  .six.columns 6
-.row
-  .five.columns 5
-  .seven.columns 7
-.row
-  .four.columns 4
-  .eight.columns 8
-.row
-  .three.columns 3
-  .nine.columns 9
-.row
-  .two.columns 2
-  .ten.columns 10
-.row
-  .one.columns 1
-  .eleven.columns 11
-.row
-  .one.half 1/2
-  .one.half 1/2
-.row
-  .one.third 1/3
-  .one.third 1/3
-  .one.third 1/3
-.row
-  .two.thirds 2/3
-  .one.third 1/3
-.row
-  .one.fourth 1/4
-  .one.fourth 1/4
-  .one.fourth 1/4
-  .one.fourth 1/4
-.row
-  .three.fourths 3/4
-  .one.fourth 1/4
-.row
-  .one.fourth 1/4
-  .two.fourths 2/4
-  .one.fourth 1/4
-.row
-  .one.fifth 1/5
-  .one.fifth 1/5
-  .one.fifth 1/5
-  .one.fifth 1/5
-  .one.fifth 1/5
-.row
-  .two.fifths 2/5
-  .three.fifths 3/5
-.row
-  .one.fifth 1/5
-  .three.fifths 3/5
-  .one.fifth 1/5
-.row
-  .four.fifths 4/5
-  .one.fifth 1/5
-.row
-  .one.sixth 1/6
-  .one.sixth 1/6
-  .one.sixth 1/6
-  .one.sixth 1/6
-  .one.sixth 1/6
-  .one.sixth 1/6
-.row
-  .two.sixths 2/6
-  .three.sixths 3/6
-  .one.sixth 1/6
-.row
-  .one.seventh 1/7
-  .one.seventh 1/7
-  .one.seventh 1/7
-  .one.seventh 1/7
-  .one.seventh 1/7
-  .one.seventh 1/7
-  .one.seventh 1/7
-.row
-  .three.sevenths 3/7
-  .four.sevenths 4/7
-.row
-  .two.sevenths 2/7
-  .four.sevenths 4/7
-  .one.seventh 1/7
-.row
-  .one.eighth 1/8
-  .one.eighth 1/8
-  .one.eighth 1/8
-  .one.eighth 1/8
-  .one.eighth 1/8
-  .one.eighth 1/8
-  .one.eighth 1/8
-  .one.eighth 1/8
-.row
-  .three.eighths 3/8
-  .five.eighths 5/8
-.row
-  .one.eighth 1/8
-  .seven.eighths 7/8
-.row
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-  .one.ninth 1/9
-.row
-  .two.ninths 2/9
-  .seven.ninths 7/9
-.row
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-  .one.tenth 1/10
-.row
-  .three.tenths 3/10
-  .seven.tenths 7/10
-.row
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-  .one.eleventh 1/11
-.row
-  .three.elevenths 3/11
-  .seven.elevenths 7/11
-  .one.eleventh 1/11
-.row
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-  .one.twelfth 1/12
-.row
-  .five.twelfths 5/12
-  .seven.twelfths 7/12</pre></code>
-          </div>
-        </div>
-      </div>
-
-      <hr class="lt-gray" />
-
-      <h4 class="pull-right zero">
-        <a href="#centered" class="view-code">
-          <i class="icon-chevron-left"></i>
-          <i class="icon-chevron-right"></i>
-        </a>
-      </h4>
-      <h6>Centered Columns</h6>
-      <div id="centereddemo" class="demo">
-        <div class="row">
-          <div class="one centered column">1</div>
-        </div>
-        <div class="row">
-          <div class="two centered columns">2</div>
-        </div>
-        <div class="row">
-          <div class="three centered columns">3</div>
-        </div>
-        <div class="row">
-          <div class="four centered columns">4</div>
-        </div>
-        <div class="row">
-          <div class="five centered columns">5</div>
-        </div>
-        <div class="row">
-          <div class="six centered columns">6</div>
-        </div>
-        <div class="row">
-          <div class="seven centered columns">7</div>
-        </div>
-        <div class="row">
-          <div class="eight centered columns">8</div>
-        </div>
-        <div class="row">
-          <div class="nine centered columns">9</div>
-        </div>
-        <div class="row">
-          <div class="ten centered columns">10</div>
-        </div>
-        <div class="row">
-          <div class="eleven centered columns">11</div>
-        </div>
-        <div class="row">
-          <div class="one fifth centered">1/5</div>
-        </div>
-        <div class="row">
-          <div class="one seventh centered">1/7</div>
-        </div>
-        <div class="row">
-          <div class="one eleventh centered">1/11</div>
-        </div>
-      </div>
-      <div id="centeredcode" class="code">
-        <div class="row">
-          <div class="six columns padded">
-        <code><pre class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one centered column&quot;&gt;1&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two centered columns&quot;&gt;2&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three centered columns&quot;&gt;3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four centered columns&quot;&gt;4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;five centered columns&quot;&gt;5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;six centered columns&quot;&gt;6&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;seven centered columns&quot;&gt;7&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eight centered columns&quot;&gt;8&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;nine centered columns&quot;&gt;9&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;ten centered columns&quot;&gt;10&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eleven centered columns&quot;&gt;11&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one fifth centered&quot;&gt;1/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one seventh centered&quot;&gt;1/7&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one eleventh centered&quot;&gt;1/11&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="six columns padded">
-            <code><pre class="haml">.row
-  .one.centered.column 1
-.row
-  .two.centered.columns 2
-.row
-  .three.centered.columns 3
-.row
-  .four.centered.columns 4
-.row
-  .five.centered.columns 5
-.row
-  .six.centered.columns 6
-.row
-  .seven.centered.columns 7
-.row
-  .eight.centered.columns 8
-.row
-  .nine.centered.columns 9
-.row
-  .ten.centered.columns 10
-.row
-  .eleven.centered.columns 11
-.row
-  .one.fifth.centered 1/5
-.row
-  .one.seventh.centered 1/7
-.row
-  .one.eleventh.centered 1/11</pre></code>
-          </div>
-        </div>
-      </div>
-
-      <hr class="lt-gray" />
-
-      <h4 class="pull-right zero">
-        <a href="#offset" class="view-code">
-          <i class="icon-chevron-left"></i>
-          <i class="icon-chevron-right"></i>
-        </a>
-      </h4>
-      <h6>Offset Columns</h6>
-      <div id="offsetdemo" class="demo">
-        <div class="row">
-          <div class="eleven columns offset-by-one">11</div>
-        </div>
-        <div class="row">
-          <div class="ten columns offset-by-two">10</div>
-        </div>
-        <div class="row">
-          <div class="nine columns offset-by-three">9</div>
-        </div>
-        <div class="row">
-          <div class="eight columns offset-by-four">8</div>
-        </div>
-        <div class="row">
-          <div class="seven columns offset-by-five">7</div>
-        </div>
-        <div class="row">
-          <div class="six columns offset-by-six">6</div>
-        </div>
-        <div class="row">
-          <div class="one column">1</div>
-          <div class="five columns offset-by-six">5</div>
-        </div>
-        <div class="row">
-          <div class="two columns">2</div>
-          <div class="four columns offset-by-six">4</div>
-        </div>
-        <div class="row">
-          <div class="three columns">3</div>
-          <div class="three columns offset-by-six">3</div>
-        </div>
-        <div class="row">
-          <div class="four columns">4</div>
-          <div class="two columns offset-by-six">2</div>
-        </div>
-        <div class="row">
-          <div class="five columns">5</div>
-          <div class="one column offset-by-six">1</div>
-        </div>
-        <div class="row">
-          <div class="four fifths offset-by-one">4/5</div>
-        </div>
-        <div class="row">
-          <div class="eight elevenths offset-by-three">8/11</div>
-        </div>
-        <div class="row">
-          <div class="five sevenths offset-by-two">5/7</div>
-        </div>
-      </div>
-      <div id="offsetcode" class="code">
-        <div class="row">
-          <div class="six columns padded">
-        <code><pre class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eleven columns offset-by-one&quot;&gt;11&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;ten columns offset-by-two&quot;&gt;10&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;nine columns offset-by-three&quot;&gt;9&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eight columns offset-by-four&quot;&gt;8&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;seven columns offset-by-five&quot;&gt;7&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;six columns offset-by-six&quot;&gt;6&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one column&quot;&gt;1&lt;/div&gt;
-  &lt;div class=&quot;five columns offset-by-six&quot;&gt;5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two columns&quot;&gt;2&lt;/div&gt;
-  &lt;div class=&quot;four columns offset-by-six&quot;&gt;4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three columns&quot;&gt;3&lt;/div&gt;
-  &lt;div class=&quot;three columns offset-by-six&quot;&gt;3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four columns&quot;&gt;4&lt;/div&gt;
-  &lt;div class=&quot;two columns offset-by-six&quot;&gt;2&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;five columns&quot;&gt;5&lt;/div&gt;
-  &lt;div class=&quot;one column offset-by-six&quot;&gt;1&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four fifths offset-by-one&quot;&gt;4/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eight elevenths offset-by-three&quot;&gt;8/11&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;five sevenths offset-by-two&quot;&gt;5/7&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="six columns padded">
-            <code><pre class="haml">.row
-  .eleven.columns.offset-by-one 11
-.row
-  .ten.columns.offset-by-two 10
-.row
-  .nine.columns.offset-by-three 9
-.row
-  .eight.columns.offset-by-four 8
-.row
-  .seven.columns.offset-by-five 7
-.row
-  .six.columns.offset-by-six 6
-.row
-  .one.column 1
-  .five.columns.offset-by-six 5
-.row
-  .two.columns 2
-  .four.columns.offset-by-six 4
-.row
-  .three.columns 3
-  .three.columns.offset-by-six 3
-.row
-  .four.columns 4
-  .two.columns.offset-by-six 2
-.row
-  .five.columns 5
-  .one.column.offset-by-six 1
-.row
-  .four.fifths.offset-by-one 4/5
-.row
-  .eight.elevenths.offset-by-three 8/11
-.row
-  .five.sevenths.offset-by-two 5/7</pre></code>
-          </div>
-        </div>
-      </div>
-
-      <hr class="lt-gray" />
-
-      <h4 class="pull-right zero">
-        <a href="#ordering" class="view-code">
-          <i class="icon-chevron-left"></i>
-          <i class="icon-chevron-right"></i>
-        </a>
-      </h4>
-      <h6>Source Ordering</h6>
-      <div id="orderingdemo" class="demo">
-        <div class="row">
-          <div class="two columns push-ten">2 (first)</div>
-          <div class="ten columns pull-two">10 (last)</div>
-        </div>
-        <div class="row">
-          <div class="three columns push-nine">3 (first)</div>
-          <div class="nine columns pull-three">9 (last)</div>
-        </div>
-        <div class="row">
-          <div class="four columns push-eight">4 (first)</div>
-          <div class="eight columns pull-four">8 (last)</div>
-        </div>
-        <div class="row">
-          <div class="five columns push-seven">5 (first)</div>
-          <div class="seven columns pull-five">7 (last)</div>
-        </div>
-        <div class="row">
-          <div class="six columns push-six">6 (first)</div>
-          <div class="six columns pull-six">6 (last)</div>
-        </div>
-        <div class="row">
-          <div class="two fifths push-three">2/5 (first)</div>
-          <div class="three fifths pull-two">3/5 (last)</div>
-        </div>
-        <div class="row">
-          <div class="four sevenths push-three">4/7 (first)</div>
-          <div class="three sevenths pull-four">3/7 (last)</div>
-        </div>
-        <div class="row">
-          <div class="three elevenths push-eight">3/11 (first)</div>
-          <div class="eight elevenths pull-three">8/11 (last)</div>
-        </div>
-      </div>
-      <div id="orderingcode" class="code">
-        <div class="row">
-          <div class="six columns padded">
-        <code><pre class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two columns push-ten&quot;&gt;2 (first)&lt;/div&gt;
-  &lt;div class=&quot;ten columns pull-two&quot;&gt;10 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three columns push-nine&quot;&gt;3 (first)&lt;/div&gt;
-  &lt;div class=&quot;nine columns pull-three&quot;&gt;9 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four columns push-eight&quot;&gt;4 (first)&lt;/div&gt;
-  &lt;div class=&quot;eight columns pull-four&quot;&gt;8 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;five columns push-seven&quot;&gt;5 (first)&lt;/div&gt;
-  &lt;div class=&quot;seven columns pull-five&quot;&gt;7 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;six columns push-six&quot;&gt;6 (first)&lt;/div&gt;
-  &lt;div class=&quot;six columns pull-six&quot;&gt;6 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;two fifths push-three&quot;&gt;2/5 (first)&lt;/div&gt;
-  &lt;div class=&quot;three fifths pull-two&quot;&gt;3/5 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four sevenths push-three&quot;&gt;4/7 (first)&lt;/div&gt;
-  &lt;div class=&quot;three sevenths pull-four&quot;&gt;3/7 (last)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three elevenths push-eight&quot;&gt;3/11 (first)&lt;/div&gt;
-  &lt;div class=&quot;eight elevenths pull-three&quot;&gt;8/11 (last)&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="six columns padded">
-            <code><pre class="haml">.row
-  .two.columns.push-ten 2 (first)
-  .ten.columns.pull-two 10 (last)
-.row
-  .three.columns.push-nine 3 (first)
-  .nine.columns.pull-three 9 (last)
-.row
-  .four.columns.push-eight 4 (first)
-  .eight.columns.pull-four 8 (last)
-.row
-  .five.columns.push-seven 5 (first)
-  .seven.columns.pull-five 7 (last)
-.row
-  .six.columns.push-six 6 (first)
-  .six.columns.pull-six 6 (last)
-.row
-  .two.fifths.push-three 2/5 (first)
-  .three.fifths.pull-two 3/5 (last)
-.row
-  .four.sevenths.push-three 4/7 (first)
-  .three.sevenths.pull-four 3/7 (last)
-.row
-  .three.elevenths.push-eight 3/11 (first)
-  .eight.elevenths.pull-three 8/11 (last)</pre></code>
-          </div>
-        </div>
-      </div>
-
-      <hr class="lt-gray" />
-
-      <h4 class="pull-right zero">
-        <br/>
-        <a href="#tabletgrid" class="view-code">
-          <i class="icon-chevron-left"></i>
-          <i class="icon-chevron-right"></i>
-        </a>
-      </h4>
-      <h6 class="small">3 or 4 Column Grids for Small Tablets<br/>
-        <small>(columns don't collapse into seperate rows until down to 480px)</small></h6>
-      <div id="tabletgriddemo" class="demo">
-        <div class="row">
-          <div class="four small-tablet columns">1/3</div>
-          <div class="four small-tablet columns">1/3</div>
-          <div class="four small-tablet columns">1/3</div>
-        </div>
-        <div class="row">
-          <div class="three small-tablet columns">1/4</div>
-          <div class="six small-tablet columns">1/2</div>
-          <div class="three small-tablet columns">1/4</div>
-        </div>
-        <div class="row">
-          <div class="three small-tablet columns">1/4</div>
-          <div class="three small-tablet columns">1/4</div>
-          <div class="three small-tablet columns">1/4</div>
-          <div class="three small-tablet columns">1/4</div>
-        </div>
-        <div class="row">
-          <div class="nine small-tablet columns">3/4</div>
-          <div class="three small-tablet columns">1/4</div>
-        </div>
-        <div class="row">
-          <div class="eight small-tablet columns">2/3</div>
-          <div class="four small-tablet columns">1/3</div>
-        </div>
-        <div class="row">
-          <div class="six small-tablet columns">1/2</div>
-          <div class="six small-tablet columns">1/2</div>
-        </div>
-        <div class="row">
-          <div class="four small-tablet columns">1/3</div>
-          <div class="eight small-tablet columns">2/3</div>
-        </div>
-        <div class="row">
-          <div class="three small-tablet columns">1/4</div>
-          <div class="nine small-tablet columns">3/4</div>
-        </div>
-        <div class="row">
-          <div class="one small-tablet fifth">1/5</div>
-          <div class="three small-tablet fifths">3/5</div>
-          <div class="one small-tablet fifth">1/5</div>
-        </div>
-        <div class="row">
-          <div class="one small-tablet seventh">1/7</div>
-          <div class="five small-tablet sevenths">5/7</div>
-          <div class="one small-tablet seventh">1/7</div>
-        </div>
-      </div>
-      <div id="tabletgridcode" class="code">
-        <div class="row">
-          <div class="six columns padded">
-        <code><pre class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four small-tablet columns&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;four small-tablet columns&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;four small-tablet columns&quot;&gt;1/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;six small-tablet columns&quot;&gt;1/2&lt;/div&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;nine small-tablet columns&quot;&gt;3/4&lt;/div&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eight small-tablet columns&quot;&gt;2/3&lt;/div&gt;
-  &lt;div class=&quot;four small-tablet columns&quot;&gt;1/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;six small-tablet columns&quot;&gt;1/2&lt;/div&gt;
-  &lt;div class=&quot;six small-tablet columns&quot;&gt;1/2&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four small-tablet columns&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;eight small-tablet columns&quot;&gt;2/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three small-tablet columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;nine small-tablet columns&quot;&gt;3/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one small-tablet fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;three small-tablet fifths&quot;&gt;3/5&lt;/div&gt;
-  &lt;div class=&quot;one small-tablet fifth&quot;&gt;1/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one small-tablet seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;five small-tablet sevenths&quot;&gt;5/7&lt;/div&gt;
-  &lt;div class=&quot;one small-tablet seventh&quot;&gt;1/7&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="six columns padded">
-            <code><pre class="haml">.row
-  .four.small-tablet.columns 1/3
-  .four.small-tablet.columns 1/3
-  .four.small-tablet.columns 1/3
-.row
-  .three.small-tablet.columns 1/4
-  .six.small-tablet.columns 1/2
-  .three.small-tablet.columns 1/4
-.row
-  .three.small-tablet.columns 1/4
-  .three.small-tablet.columns 1/4
-  .three.small-tablet.columns 1/4
-  .three.small-tablet.columns 1/4
-.row
-  .nine.small-tablet.columns 3/4
-  .three.small-tablet.columns 1/4
-.row
-  .eight.small-tablet.columns 2/3
-  .four.small-tablet.columns 1/3
-.row
-  .six.small-tablet.columns 1/2
-  .six.small-tablet.columns 1/2
-.row
-  .four.small-tablet.columns 1/3
-  .eight.small-tablet.columns 2/3
-.row
-  .three.small-tablet.columns 1/4
-  .nine.small-tablet.columns 3/4
-.row
-  .one.small-tablet.fifth 1/5
-  .three.small-tablet.fifths 3/5
-  .one.small-tablet.fifth 1/5
-.row
-  .one.small-tablet.seventh 1/7
-  .five.small-tablet.sevenths 5/7
-  .one.small-tablet.seventh 1/7</pre></code>
-          </div>
-        </div>
-      </div>
-
-      <hr class="lt-gray" />
-
-      <h4 class="pull-right zero">
-        <br/>
-        <a href="#mobilegrid" class="view-code">
-          <i class="icon-chevron-left"></i>
-          <i class="icon-chevron-right"></i>
-        </a>
-      </h4>
-      <h6 class="small">3 or 4 Column Grids for Mobile<br/>
-        <small>(columns maintain structure down through mobile viewports sizes)</small></h6>
-      <div id="mobilegriddemo" class="demo">
-        <div class="row">
-          <div class="four mobile columns">1/3</div>
-          <div class="four mobile columns">1/3</div>
-          <div class="four mobile columns">1/3</div>
-        </div>
-        <div class="row">
-          <div class="three mobile columns">1/4</div>
-          <div class="six mobile columns">1/2</div>
-          <div class="three mobile columns">1/4</div>
-        </div>
-        <div class="row">
-          <div class="three mobile columns">1/4</div>
-          <div class="three mobile columns">1/4</div>
-          <div class="three mobile columns">1/4</div>
-          <div class="three mobile columns">1/4</div>
-        </div>
-        <div class="row">
-          <div class="nine mobile columns">3/4</div>
-          <div class="three mobile columns">1/4</div>
-        </div>
-        <div class="row">
-          <div class="eight mobile columns">2/3</div>
-          <div class="four mobile columns">1/3</div>
-        </div>
-        <div class="row">
-          <div class="six mobile columns">1/2</div>
-          <div class="six mobile columns">1/2</div>
-        </div>
-        <div class="row">
-          <div class="four mobile columns">1/3</div>
-          <div class="eight mobile columns">2/3</div>
-        </div>
-        <div class="row">
-          <div class="three mobile columns">1/4</div>
-          <div class="nine mobile columns">3/4</div>
-        </div>
-        <div class="row">
-          <div class="one mobile fifth">1/5</div>
-          <div class="three mobile fifths">3/5</div>
-          <div class="one mobile fifth">1/5</div>
-        </div>
-        <div class="row">
-          <div class="one mobile seventh">1/7</div>
-          <div class="five mobile sevenths">5/7</div>
-          <div class="one mobile seventh">1/7</div>
-        </div>
-      </div>
-      <div id="mobilegridcode" class="code">
-        <div class="row">
-          <div class="six columns padded">
-        <code><pre class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four mobile columns&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;four mobile columns&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;four mobile columns&quot;&gt;1/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;six mobile columns&quot;&gt;1/2&lt;/div&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;nine mobile columns&quot;&gt;3/4&lt;/div&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;eight mobile columns&quot;&gt;2/3&lt;/div&gt;
-  &lt;div class=&quot;four mobile columns&quot;&gt;1/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;six mobile columns&quot;&gt;1/2&lt;/div&gt;
-  &lt;div class=&quot;six mobile columns&quot;&gt;1/2&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;four mobile columns&quot;&gt;1/3&lt;/div&gt;
-  &lt;div class=&quot;eight mobile columns&quot;&gt;2/3&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;three mobile columns&quot;&gt;1/4&lt;/div&gt;
-  &lt;div class=&quot;nine mobile columns&quot;&gt;3/4&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one mobile fifth&quot;&gt;1/5&lt;/div&gt;
-  &lt;div class=&quot;three mobile fifths&quot;&gt;3/5&lt;/div&gt;
-  &lt;div class=&quot;one mobile fifth&quot;&gt;1/5&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;one mobile seventh&quot;&gt;1/7&lt;/div&gt;
-  &lt;div class=&quot;five mobile sevenths&quot;&gt;5/7&lt;/div&gt;
-  &lt;div class=&quot;one mobile seventh&quot;&gt;1/7&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="six columns padded">
-        <code><pre class="haml">.row
-  .four.mobile.columns 1/3
-  .four.mobile.columns 1/3
-  .four.mobile.columns 1/3
-.row
-  .three.mobile.columns 1/4
-  .six.mobile.columns 1/2
-  .three.mobile.columns 1/4
-.row
-  .three.mobile.columns 1/4
-  .three.mobile.columns 1/4
-  .three.mobile.columns 1/4
-  .three.mobile.columns 1/4
-.row
-  .nine.mobile.columns 3/4
-  .three.mobile.columns 1/4
-.row
-  .eight.mobile.columns 2/3
-  .four.mobile.columns 1/3
-.row
-  .six.mobile.columns 1/2
-  .six.mobile.columns 1/2
-.row
-  .four.mobile.columns 1/3
-  .eight.mobile.columns 2/3
-.row
-  .three.mobile.columns 1/4
-  .nine.mobile.columns 3/4
-.row
-  .one.mobile.fifth 1/5
-  .three.mobile.fifths 3/5
-  .one.mobile.fifth 1/5
-.row
-  .one.mobile.seventh 1/7
-  .five.mobile.sevenths 5/7
-  .one.mobile.seventh 1/7</pre></code>
-          </div>
-        </div>
-      </div>
+  <h6 class="small sectionheading">12 Columns</h6>
+  <p>Columns collapse into seperate rows when viewport width is below 768 pixels</p>
+  <div id="griddemo" class="demo">
+    <div class="row">
+      <div class="four columns">4</div>
+      <div class="four columns">4</div>
+      <div class="four columns">4</div>
     </div>
+    <div class="row">
+      <div class="three columns">3</div>
+      <div class="six columns">6</div>
+      <div class="three columns">3</div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">12</div>
+    </div>
+    <div class="row">
+      <div class="eleven columns">11</div>
+      <div class="one columns">1</div>
+    </div>
+    <div class="row">
+      <div class="ten columns">10</div>
+      <div class="two columns">2</div>
+    </div>
+    <div class="row">
+      <div class="nine columns">9</div>
+      <div class="three columns">3</div>
+    </div>
+    <div class="row">
+      <div class="eight columns">8</div>
+      <div class="four columns">4</div>
+    </div>
+    <div class="row">
+      <div class="seven columns">7</div>
+      <div class="five columns">5</div>
+    </div>
+    <div class="row">
+      <div class="six columns">6</div>
+      <div class="six columns">6</div>
+    </div>
+    <div class="row">
+      <div class="five columns">5</div>
+      <div class="seven columns">7</div>
+    </div>
+    <div class="row">
+      <div class="four columns">4</div>
+      <div class="eight columns">8</div>
+    </div>
+    <div class="row">
+      <div class="three columns">3</div>
+      <div class="nine columns">9</div>
+    </div>
+    <div class="row">
+      <div class="two columns">2</div>
+      <div class="ten columns">10</div>
+    </div>
+    <div class="row">
+      <div class="one columns">1</div>
+      <div class="eleven columns">11</div>
+    </div>
+    
+    <h6 class="small sectionheading">Halves</h6>
+    <div class="row">
+      <div class="one half">1/2</div>
+      <div class="one half">1/2</div>
+    </div>
+    
+    <h6 class="small sectionheading">Thirds</h6>
+    <div class="row">
+      <div class="one third">1/3</div>
+      <div class="one third">1/3</div>
+      <div class="one third">1/3</div>
+    </div>
+    <div class="row">
+      <div class="two thirds">2/3</div>
+      <div class="one third">1/3</div>
+    </div>
+    
+    <h6 class="small sectionheading">Fourths</h6>
+    <div class="row">
+      <div class="one fourth">1/4</div>
+      <div class="one fourth">1/4</div>
+      <div class="one fourth">1/4</div>
+      <div class="one fourth">1/4</div>
+    </div>
+    <div class="row">
+      <div class="three fourths">3/4</div>
+      <div class="one fourth">1/4</div>
+    </div>
+    <div class="row">
+      <div class="one fourth">1/4</div>
+      <div class="two fourths">2/4</div>
+      <div class="one fourth">1/4</div>
+    </div>
+    
+    <h6 class="small sectionheading">Fifths</h6>
+    <div class="row">
+      <div class="one fifth">1/5</div>
+      <div class="one fifth">1/5</div>
+      <div class="one fifth">1/5</div>
+      <div class="one fifth">1/5</div>
+      <div class="one fifth">1/5</div>
+    </div>
+    <div class="row">
+      <div class="two fifths">2/5</div>
+      <div class="three fifths">3/5</div>
+    </div>
+    <div class="row">
+      <div class="one fifth">1/5</div>
+      <div class="three fifths">3/5</div>
+      <div class="one fifth">1/5</div>
+    </div>
+    <div class="row">
+      <div class="four fifths">4/5</div>
+      <div class="one fifth">1/5</div>
+    </div>
+    
+    <h6 class="small sectionheading">Sixths</h6>
+    <div class="row">
+      <div class="one sixth">1/6</div>
+      <div class="one sixth">1/6</div>
+      <div class="one sixth">1/6</div>
+      <div class="one sixth">1/6</div>
+      <div class="one sixth">1/6</div>
+      <div class="one sixth">1/6</div>
+    </div>
+    <div class="row">
+      <div class="two sixths">2/6</div>
+      <div class="three sixths">3/6</div>
+      <div class="one sixth">1/6</div>
+    </div>
+    
+    <h6 class="small sectionheading">Sevenths</h6>
+    <div class="row">
+      <div class="one seventh">1/7</div>
+      <div class="one seventh">1/7</div>
+      <div class="one seventh">1/7</div>
+      <div class="one seventh">1/7</div>
+      <div class="one seventh">1/7</div>
+      <div class="one seventh">1/7</div>
+      <div class="one seventh">1/7</div>
+    </div>
+    <div class="row">
+      <div class="three sevenths">3/7</div>
+      <div class="four sevenths">4/7</div>
+    </div>
+    <div class="row">
+      <div class="two sevenths">2/7</div>
+      <div class="four sevenths">4/7</div>
+      <div class="one seventh">1/7</div>
+    </div>
+    
+    <h6 class="small sectionheading">Eighths</h6>
+    <div class="row">
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+      <div class="one eighth">1/8</div>
+    </div>
+    <div class="row">
+      <div class="three eighths">3/8</div>
+      <div class="five eighths">5/8</div>
+    </div>
+    <div class="row">
+      <div class="one eighth">1/8</div>
+      <div class="seven eighths">7/8</div>
+    </div>
+    
+    <h6 class="small sectionheading">Ninths</h6>
+    <div class="row">
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+      <div class="one ninth">1/9</div>
+    </div>
+    <div class="row">
+      <div class="two ninths">2/9</div>
+      <div class="seven ninths">7/9</div>
+    </div>
+    
+    <h6 class="small sectionheading">Tenths</h6>
+    <div class="row">
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+      <div class="one tenth">1/10</div>
+    </div>
+    <div class="row">
+      <div class="three tenths">3/10</div>
+      <div class="seven tenths">7/10</div>
+    </div>
+    
+    <h6 class="small sectionheading">Elevenths</h6>
+    <div class="row">
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+      <div class="one eleventh">1/11</div>
+    </div>
+    <div class="row">
+      <div class="three elevenths">3/11</div>
+      <div class="seven elevenths">7/11</div>
+      <div class="one eleventh">1/11</div>
+    </div>
+    
+    <h6 class="small sectionheading">Twelfths</h6>
+    <div class="row">
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+      <div class="one twelfth">1/12</div>
+    </div>
+    <div class="row">
+      <div class="five twelfths">5/12</div>
+      <div class="seven twelfths">7/12</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h6 class="sectionheading">Centered Columns</h6>
+  <div id="centereddemo" class="demo">
+    <div class="row">
+      <div class="one centered column">1</div>
+    </div>
+    <div class="row">
+      <div class="two centered columns">2</div>
+    </div>
+    <div class="row">
+      <div class="three centered columns">3</div>
+    </div>
+    <div class="row">
+      <div class="four centered columns">4</div>
+    </div>
+    <div class="row">
+      <div class="five centered columns">5</div>
+    </div>
+    <div class="row">
+      <div class="six centered columns">6</div>
+    </div>
+    <div class="row">
+      <div class="seven centered columns">7</div>
+    </div>
+    <div class="row">
+      <div class="eight centered columns">8</div>
+    </div>
+    <div class="row">
+      <div class="nine centered columns">9</div>
+    </div>
+    <div class="row">
+      <div class="ten centered columns">10</div>
+    </div>
+    <div class="row">
+      <div class="eleven centered columns">11</div>
+    </div>
+    <div class="row">
+      <div class="one fifth centered">1/5</div>
+    </div>
+    <div class="row">
+      <div class="one seventh centered">1/7</div>
+    </div>
+    <div class="row">
+      <div class="one eleventh centered">1/11</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h6 class="sectionheading">Offset Columns</h6>
+  <div id="offsetdemo" class="demo">
+    <div class="row">
+      <div class="eleven columns offset-by-one">11</div>
+    </div>
+    <div class="row">
+      <div class="ten columns offset-by-two">10</div>
+    </div>
+    <div class="row">
+      <div class="nine columns offset-by-three">9</div>
+    </div>
+    <div class="row">
+      <div class="eight columns offset-by-four">8</div>
+    </div>
+    <div class="row">
+      <div class="seven columns offset-by-five">7</div>
+    </div>
+    <div class="row">
+      <div class="six columns offset-by-six">6</div>
+    </div>
+    <div class="row">
+      <div class="one column">1</div>
+      <div class="five columns offset-by-six">5</div>
+    </div>
+    <div class="row">
+      <div class="two columns">2</div>
+      <div class="four columns offset-by-six">4</div>
+    </div>
+    <div class="row">
+      <div class="three columns">3</div>
+      <div class="three columns offset-by-six">3</div>
+    </div>
+    <div class="row">
+      <div class="four columns">4</div>
+      <div class="two columns offset-by-six">2</div>
+    </div>
+    <div class="row">
+      <div class="five columns">5</div>
+      <div class="one column offset-by-six">1</div>
+    </div>
+    <div class="row">
+      <div class="four fifths offset-by-one">4/5</div>
+    </div>
+    <div class="row">
+      <div class="eight elevenths offset-by-three">8/11</div>
+    </div>
+    <div class="row">
+      <div class="five sevenths offset-by-two">5/7</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h6 class="sectionheading">Source Re-ordering</h6>
+  <div id="orderingdemo" class="demo">
+    <div class="row">
+      <div class="two columns push-ten">2 (first)</div>
+      <div class="ten columns pull-two">10 (last)</div>
+    </div>
+    <div class="row">
+      <div class="three columns push-nine">3 (first)</div>
+      <div class="nine columns pull-three">9 (last)</div>
+    </div>
+    <div class="row">
+      <div class="four columns push-eight">4 (first)</div>
+      <div class="eight columns pull-four">8 (last)</div>
+    </div>
+    <div class="row">
+      <div class="five columns push-seven">5 (first)</div>
+      <div class="seven columns pull-five">7 (last)</div>
+    </div>
+    <div class="row">
+      <div class="six columns push-six">6 (first)</div>
+      <div class="six columns pull-six">6 (last)</div>
+    </div>
+    <div class="row">
+      <div class="two fifths push-three">2/5 (first)</div>
+      <div class="three fifths pull-two">3/5 (last)</div>
+    </div>
+    <div class="row">
+      <div class="four sevenths push-three">4/7 (first)</div>
+      <div class="three sevenths pull-four">3/7 (last)</div>
+    </div>
+    <div class="row">
+      <div class="three elevenths push-eight">3/11 (first)</div>
+      <div class="eight elevenths pull-three">8/11 (last)</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h6 class="small sectionheading">3 or 4 Column Grids for Small Tablets</h6>
+  <p>Columns don't collapse into seperate rows until viewport width falls below 480 pixels</p>
+  <div id="tabletgriddemo" class="demo">
+    <div class="row">
+      <div class="four small-tablet columns">1/3</div>
+      <div class="four small-tablet columns">1/3</div>
+      <div class="four small-tablet columns">1/3</div>
+    </div>
+    <div class="row">
+      <div class="three small-tablet columns">1/4</div>
+      <div class="six small-tablet columns">1/2</div>
+      <div class="three small-tablet columns">1/4</div>
+    </div>
+    <div class="row">
+      <div class="three small-tablet columns">1/4</div>
+      <div class="three small-tablet columns">1/4</div>
+      <div class="three small-tablet columns">1/4</div>
+      <div class="three small-tablet columns">1/4</div>
+    </div>
+    <div class="row">
+      <div class="nine small-tablet columns">3/4</div>
+      <div class="three small-tablet columns">1/4</div>
+    </div>
+    <div class="row">
+      <div class="eight small-tablet columns">2/3</div>
+      <div class="four small-tablet columns">1/3</div>
+    </div>
+    <div class="row">
+      <div class="six small-tablet columns">1/2</div>
+      <div class="six small-tablet columns">1/2</div>
+    </div>
+    <div class="row">
+      <div class="four small-tablet columns">1/3</div>
+      <div class="eight small-tablet columns">2/3</div>
+    </div>
+    <div class="row">
+      <div class="three small-tablet columns">1/4</div>
+      <div class="nine small-tablet columns">3/4</div>
+    </div>
+    <div class="row">
+      <div class="one small-tablet fifth">1/5</div>
+      <div class="three small-tablet fifths">3/5</div>
+      <div class="one small-tablet fifth">1/5</div>
+    </div>
+    <div class="row">
+      <div class="one small-tablet seventh">1/7</div>
+      <div class="five small-tablet sevenths">5/7</div>
+      <div class="one small-tablet seventh">1/7</div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h6 class="small sectionheading">3 or 4 Column Grids for Mobile</h6>
+  <p>Columns maintain structure down through mobile viewport sizes</p>
+  <div id="mobilegriddemo" class="demo">
+    <div class="row">
+      <div class="four mobile columns">1/3</div>
+      <div class="four mobile columns">1/3</div>
+      <div class="four mobile columns">1/3</div>
+    </div>
+    <div class="row">
+      <div class="three mobile columns">1/4</div>
+      <div class="six mobile columns">1/2</div>
+      <div class="three mobile columns">1/4</div>
+    </div>
+    <div class="row">
+      <div class="three mobile columns">1/4</div>
+      <div class="three mobile columns">1/4</div>
+      <div class="three mobile columns">1/4</div>
+      <div class="three mobile columns">1/4</div>
+    </div>
+    <div class="row">
+      <div class="nine mobile columns">3/4</div>
+      <div class="three mobile columns">1/4</div>
+    </div>
+    <div class="row">
+      <div class="eight mobile columns">2/3</div>
+      <div class="four mobile columns">1/3</div>
+    </div>
+    <div class="row">
+      <div class="six mobile columns">1/2</div>
+      <div class="six mobile columns">1/2</div>
+    </div>
+    <div class="row">
+      <div class="four mobile columns">1/3</div>
+      <div class="eight mobile columns">2/3</div>
+    </div>
+    <div class="row">
+      <div class="three mobile columns">1/4</div>
+      <div class="nine mobile columns">3/4</div>
+    </div>
+    <div class="row">
+      <div class="one mobile fifth">1/5</div>
+      <div class="three mobile fifths">3/5</div>
+      <div class="one mobile fifth">1/5</div>
+    </div>
+    <div class="row">
+      <div class="one mobile seventh">1/7</div>
+      <div class="five mobile sevenths">5/7</div>
+      <div class="one mobile seventh">1/7</div>
+    </div>
+  </div>
+  <br/>
 </body>
 </html>
