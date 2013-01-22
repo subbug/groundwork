@@ -1,13 +1,13 @@
-/* ====================
- *   desktop styles 
- * ==================*/
+///////////////////////
+//      desktop      //
+///////////////////////
 
 
 
 
-/* ====================
- *     ipad styles 
- * ==================*/
+///////////////////////
+//       ipads       //
+///////////////////////
 @media only screen and (min-width:768px) and (max-width:1024px) {
     
 }
@@ -15,9 +15,9 @@
 
 
 
-/* ====================
- *    small tablets 
- * ==================*/
+///////////////////////
+//   small tablets   //
+///////////////////////
 @media only screen and (max-width:767px) {
   // responsive grid
   .column:not(.small-tablet):not(.mobile), 
@@ -92,9 +92,9 @@
 
 
 
-/* ====================
- *     handhelds 
- * ==================*/
+///////////////////////
+//     handhelds     //
+///////////////////////
 @media only screen and (max-width:480px) {
   // responsive grid
   .column:not(.mobile), 
@@ -130,9 +130,9 @@
 
 
 
-/* ====================
- *   small handhelds 
- * ==================*/
+///////////////////////
+//  small handhelds  //
+///////////////////////
 @media only screen and (max-width:320px) {
     
 }

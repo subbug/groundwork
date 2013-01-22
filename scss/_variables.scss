@@ -1,15 +1,16 @@
-/* ====================
- *       settings
- * ==================*/
+///////////////////////
+//      settings     //
+///////////////////////
 $max-width:         1200px; // max container width (i.e. - 960px)
-$gutter:            10px; // gutter spacing
+$gutter:            10px;   // gutter spacing
 
 
 
 
-/* ====================
- *      fractions
- * ==================*/
+///////////////////////
+//     fractions     //
+///////////////////////
+
 // wholes
 $one-whole:         100%;
 
@@ -113,9 +114,9 @@ $twelve-twelfths:    $one-whole;
 
 
 
-/* ====================
- *       aliases
- * ==================*/
+///////////////////////
+//      aliases      //
+///////////////////////
 $one-column:        $one-twelfth;
 $two-columns:       $one-sixth;
 $three-columns:     $one-fourth;
