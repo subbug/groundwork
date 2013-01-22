@@ -1,19 +1,14 @@
 /* =============================================
- *        Gridmatic by Gary Hepting
- *          Last Updated:2013-1-3
+ *        Groundwork by Gary Hepting
+ *          Last Updated:2013-1-22
  * ===========================================*/
 
-// settings
-@import "variables";
+@import "reset";        // required
 
-// css reset (required for box sizing)
-@import "reset";
+@import "variables";    // required
 
-// global
-@import "global";
+@import "grid";         // required
 
-// grid
-@import "grid";
+@import "global";       // optional
 
-// responsive adjustments (media queries)
-@import "responsive";
+@import "responsive";   // optional

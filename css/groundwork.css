@@ -1,8 +1,5 @@
-/* ============================================= Gridmatic by Gary Hepting Last Updated:2013-1-3 ===========================================*/
-/* ==================== settings ==================*/
-/* ==================== fractions ==================*/
-/* ==================== aliases ==================*/
-/* ============================================= CSS Reset by Gary Hepting  Last Updated:2013-1-3 ===========================================*/
+/* ============================================= Groundwork by Gary Hepting Last Updated:2013-1-22 ===========================================*/
+/* ============================================= CSS Reset by Gary Hepting  Last Updated:2013-1-16 ===========================================*/
 /* ===================================================== the better box model =====================================================
 
  E   L   E   M   E   N   T      W   I   D   T   H |----------------------------------------------------| |                  B  O  R  D  E  R                  | |   |--------------------------------------------|   | | B |               P A D D I N G                | B | |   |   |------------------------------------|   |   | | O | P |                                    | P | O | |   | A |                                    | A |   | | R | D |                                    | D | R | |   | D |           C O N T E N T            | D |   | | D | I |                                    | I | D | |   | N |                                    | N |   | | E | G |                                    | G | E | |   |   |------------------------------------|   |   | | R |               P A D D I N G                | R | |   |--------------------------------------------|   | |                  B  O  R  D  E  R                  | | ---------------------------------------------------|
@@ -17,49 +14,9 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd, a, img
 /* ==================== HTML5 display reset for legacy browsers ==================*/
 header, footer, aside, menu, nav, section, article, details { display: block; }
 
-/* ============================================= Global styles by Gary Hepting  Last Updated:2013-1-3 ===========================================*/
-/* ==================== global styles ==================*/
-html, body { width: 100% !important; height: 100%; font-size: 12px; font-family: Helvetica, Arial, Geneva, sans-serif; line-height: 14.4px; padding: 20px; }
-
-h1, h2, h3, h4, h5, h6 { line-height: 1.1; margin-bottom: 15px; }
-
-h1 { font-weight: 200; font-size: 28px; }
-
-h2 { font-weight: 200; font-size: 24px; }
-
-h3 { font-weight: 500; font-size: 18px; }
-
-h4 { font-weight: 500; font-size: 16px; }
-
-h5 { font-weight: 900; font-size: 14px; }
-
-h6 { font-weight: 900; font-size: 14px; text-transform: uppercase; }
-
-a { text-decoration: none; }
-a * { color: inherit; }
-a:hover, a:focus { text-decoration: underline; }
-a:hover *, a:focus * { color: inherit; }
-
-hr { border: 0; border-bottom: 1px solid #dddddd; margin: 10px auto; clear: both; }
-
-img { max-width: 100%; border: none; }
-
-p, ul { margin-bottom: 10px; font-weight: normal; font-size: 12px; line-height: 1.6; }
-
-ul, ol { margin-left: 20px; }
-
-ul { list-style-type: circle; }
-
-blockquote, time { font-family: Geneva, Tahoma, Verdana, sans-serif; }
-
-blockquote { margin: 1em; padding: 1em; border-top: 1px solid #fafafb; border-right: 1px solid #ededef; border-bottom: 1px solid #e6e6e9; border-left: 1px solid #ededef; color: #505050; font-size: 15px; line-height: 1.4; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); }
-
-.quote:before { content: '\201C'; }
-.quote:after { content: '\201D'; }
-
-cite { display: block; margin-top: 0.3em; font-style: italic; font-size: 13px; color: #b9b9b9; }
-cite:before { content: '\2014 \0020'; }
-
+/* ==================== settings ==================*/
+/* ==================== fractions ==================*/
+/* ==================== aliases ==================*/
 /* ============================================= Fractional grid system by Gary Hepting Last Updated:2013-1-3 ===========================================*/
 /* ==================== grid system ==================*/
 .container { max-width: 1200px; margin: 0 auto; }
@@ -435,6 +392,49 @@ cite:before { content: '\2014 \0020'; }
 .twelfth.ten, .twelfths.ten { width: 83.33333%; }
 .twelfth.eleven, .twelfths.eleven { width: 91.66667%; }
 .twelfth.twelve, .twelfths.twelve { width: 100%; }
+
+/* ============================================= Global styles by Gary Hepting  Last Updated:2013-1-3 ===========================================*/
+/* ==================== global styles ==================*/
+html, body { width: 100% !important; height: 100%; font-size: 12px; font-family: Helvetica, Arial, Geneva, sans-serif; line-height: 14.4px; padding: 20px; }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.1; margin-bottom: 15px; }
+
+h1 { font-weight: 200; font-size: 28px; }
+
+h2 { font-weight: 200; font-size: 24px; }
+
+h3 { font-weight: 500; font-size: 18px; }
+
+h4 { font-weight: 500; font-size: 16px; }
+
+h5 { font-weight: 900; font-size: 14px; }
+
+h6 { font-weight: 900; font-size: 14px; text-transform: uppercase; }
+
+a { text-decoration: none; }
+a * { color: inherit; }
+a:hover, a:focus { text-decoration: underline; }
+a:hover *, a:focus * { color: inherit; }
+
+hr { border: 0; border-bottom: 1px solid #dddddd; margin: 10px auto; clear: both; }
+
+img { max-width: 100%; border: none; }
+
+p, ul { margin-bottom: 10px; font-weight: normal; font-size: 12px; line-height: 1.6; }
+
+ul, ol { margin-left: 20px; }
+
+ul { list-style-type: circle; }
+
+blockquote, time { font-family: Geneva, Tahoma, Verdana, sans-serif; }
+
+blockquote { margin: 1em; padding: 1em; border-top: 1px solid #fafafb; border-right: 1px solid #ededef; border-bottom: 1px solid #e6e6e9; border-left: 1px solid #ededef; color: #505050; font-size: 15px; line-height: 1.4; box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); }
+
+.quote:before { content: '\201C'; }
+.quote:after { content: '\201D'; }
+
+cite { display: block; margin-top: 0.3em; font-style: italic; font-size: 13px; color: #b9b9b9; }
+cite:before { content: '\2014 \0020'; }
 
 /* ==================== desktop styles  ==================*/
 /* ==================== ipad styles  ==================*/

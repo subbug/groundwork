@@ -1,6 +1,6 @@
 /* =============================================
  *         CSS Reset by Gary Hepting 
- *          Last Updated:2013-1-3
+ *          Last Updated:2013-1-16
  * ===========================================*/
 
 
@@ -43,7 +43,7 @@
   -moz-box-sizing:border-box;             // Firefox
   -webkit-box-sizing:border-box;          // Webkit (Safari, Chrome, etc)
   box-sizing:border-box;                  // IE 8-9 & Other
-  *behavior: url(js/libs/boxsizing.htc);  // IE 6-7
+  *behavior: url(js/libs/boxsizing.htc);  // IE 6-7  -- Thank Schepp for the polyfill for legacy IE browsers: https://github.com/Schepp/box-sizing-polyfill
 }
 
 
@@ -64,9 +64,9 @@ pre, code, iframe, object, canvas, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  // antialiasing in webkit
+  // better antialiasing (webkit)
   -webkit-font-smoothing:antialiased;
-  // disable text size adjustments (primarily iOS devices)
+  // disable font size overrides (on iOS devices)
   -webkit-text-size-adjust:none;
 }
 
