@@ -1,19 +1,16 @@
 /* =============================================
- *        Groundwork by Gary Hepting
+ *        Groundwork by Gary Hepting 
  *          Last Updated:2013-1-22
  * ===========================================*/
 
-// settings
 @import "variables";
 
-// css reset (required for box sizing)
-@import "reset";
-
-// global
-@import "global";
-
-// grid
-@import "grid";
-
-// responsive adjustments (media queries)
-@import "responsive";
+///////////////////////////////////////
+//   groundwork compatibility mode   //
+///////////////////////////////////////
+.groundwork {
+  @import "reset";      // required
+  @import "grid";       // required
+  @import "global";     // optional
+  @import "responsive"; // optional
+}
