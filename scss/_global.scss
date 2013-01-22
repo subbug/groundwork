@@ -60,7 +60,7 @@ a {
 }
 hr {
   border:0;
-  border-bottom:1px solid $gray-2;
+  border-bottom:1px solid #ddd;
   margin:10px auto;
   clear:both;
 }
@@ -86,11 +86,11 @@ blockquote, time {
 blockquote {
   margin:1em;
   padding:1em;
-  border-top:1px solid lighten($gray-4, 5%);
-  border-right:1px solid $gray-4;
-  border-bottom:1px solid darken($gray-4, 2.5%);
-  border-left:1px solid $gray-4;
-  color:$dk-gray;
+  border-top:1px solid lighten(#ededef, 5%);
+  border-right:1px solid #ededef;
+  border-bottom:1px solid darken(#ededef, 2.5%);
+  border-left:1px solid #ededef;
+  color:#505050;
   font-size:15px;
   line-height:1.4;
   box-shadow:0 0 25px rgba(0,0,0,0.1);
@@ -108,7 +108,7 @@ cite {
   margin-top:0.3em;
   font-style:italic;
   font-size:13px;
-  color:$lt-gray;
+  color:#b9b9b9;
   &:before {
     content:'\2014 \0020';
   }

@@ -6,18 +6,52 @@
 
 
 
+/* =====================================================
+ *               the better box model
+ * =====================================================
+
+
+     E   L   E   M   E   N   T      W   I   D   T   H
+  |----------------------------------------------------|
+  |                  B  O  R  D  E  R                  |
+  |   |--------------------------------------------|   |
+  | B |               P A D D I N G                | B |
+  |   |   |------------------------------------|   |   |
+  | O | P |                                    | P | O |
+  |   | A |                                    | A |   |
+  | R | D |                                    | D | R |
+  |   | D |           C O N T E N T            | D |   |
+  | D | I |                                    | I | D |
+  |   | N |                                    | N |   |
+  | E | G |                                    | G | E |
+  |   |   |------------------------------------|   |   |
+  | R |               P A D D I N G                | R |
+  |   |--------------------------------------------|   |
+  |                  B  O  R  D  E  R                  |
+  | ---------------------------------------------------|
+
+  NOTE: Padding and border are calculated within an 
+        element's specified width instead of its total 
+        width being increased by these properties
+
+
+ * ===================================================*/
+
+*, *:after, *:before {
+  -ms-box-sizing:border-box;              // IE 10+
+  -o-box-sizing:border-box;               // Opera
+  -moz-box-sizing:border-box;             // Firefox
+  -webkit-box-sizing:border-box;          // Webkit (Safari, Chrome, etc)
+  box-sizing:border-box;                  // IE 8-9 & Other
+  *behavior: url(js/libs/boxsizing.htc);  // IE 6-7
+}
+
+
+
+
 /* ====================
  *   optimized reset
  * ==================*/
- *, *:after, *:before {
-  // the better box model
-  -ms-box-sizing:border-box; // IE 10+
-  -o-box-sizing:border-box; // Opera
-  -moz-box-sizing:border-box; // Firefox
-  -webkit-box-sizing:border-box; // Webkit (Safari, Chrome, etc)
-  box-sizing:border-box;
-}
-
 html, body, div, span, 
 h1, h2, h3, h4, h5, h6, p, 
 ol, ul, li, dl, dt, dd, 

@@ -1,8 +1,6 @@
 /* ====================
  *   desktop styles 
  * ==================*/
-.small-tablet-only { display:none; }
-.mobile-only { display:none; }
 
 
 
@@ -89,7 +87,6 @@
     &.offset-by-eleven { margin-left:0; }
     &.offset-by-twelve { margin-left:0; }
   }
-  .small-tablet-only { display:block; }
 }
 
 
@@ -128,7 +125,6 @@
     float:none;
     clear:both;
   }
-  .mobile-only { display:block; }
 }
 
 

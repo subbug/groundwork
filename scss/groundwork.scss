@@ -5,9 +5,15 @@
 
 // settings
 @import "variables";
-// css reset (needed for box model)
+
+// css reset (required for box sizing)
 @import "reset";
+
+// global
+@import "global";
+
 // grid
 @import "grid";
+
 // responsive adjustments (media queries)
 @import "responsive";

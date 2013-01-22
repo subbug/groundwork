@@ -30,6 +30,16 @@ h1, h2, h3 {
   margin-top:0.25em;
   font-family:'Six Caps',sans-serif;
   text-shadow:0.05em 0.05em 2px #3F6558;
+  img {
+    vertical-align:bottom;
+    width:1.25em;
+    height:1.25em;
+    -webkit-filter: drop-shadow(0.05em 0.05em 2px #3F6558);
+    -moz-filter: drop-shadow(0.05em 0.05em 2px #3F6558);
+    -ms-filter: drop-shadow(0.05em 0.05em 2px #3F6558);
+    -o-filter: drop-shadow(0.05em 0.05em 2px #3F6558);
+    filter: drop-shadow(0.05em 0.05em 2px #3F6558);
+  }
 }
 .subheading, .sectionheading {
   font-weight:normal;
